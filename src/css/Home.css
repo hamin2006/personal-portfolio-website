@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .body2 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .textWrap {
+    color: #333;
+    width: 100%;
+    padding: 100px;
+    margin-top: 100px;
+  }
+  
+  h1 {
+    font-size: 7rem; /* Large size for first line */
+    color: #2c3e50; /* Deep Navy Blue */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1), -2px -2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 4rem; /* Slightly smaller size for second line */
+    color: #34495e; /* Charcoal Gray */
+    font-weight: 600;
+    letter-spacing: 1px;
+    opacity: 0.85; /* Slightly reduced opacity for subtle emphasis */
+  }
+
+  .gold-text {
+    background: linear-gradient(45deg, #b88a4a, #f2c14d, #ffcc00, #f5a623);
+    -webkit-background-clip: text; /* Make the gradient apply to text */
+    background-clip: text; /* Same for non-webkit browsers */
+    color: transparent; 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3.5rem; /* Scale down text on smaller screens */
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+  

@@ -1,0 +1,76 @@
+/* Cool Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font: 1em poppins;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    
+  }
+  .logo-img {
+    height: 50px;
+    width: auto; 
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin-right: 50px;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    font-size: 1.4rem;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  
+  .nav-links li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #191970	;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .nav-links li:hover::after {
+    width: 100%;
+  }
+  
+  .nav-links li:hover {
+    color: #191970	;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  
