@@ -53,3 +53,20 @@
     }
   }
   
+  .cursor {
+    display: inline-block;
+    width: 3px; 
+    height: 50px;
+    background-color: black;
+    margin-left: 5px;
+    animation: blink 0.5s steps(1) infinite;
+  }
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}

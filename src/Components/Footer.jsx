@@ -4,7 +4,10 @@ import "../css/Footer.css"
 
 const Footer = () => {
     return (
+      <div>
+        <hr className="foo"/>
       <footer className="footer">
+        
         <a href="https://linkedin.com/in/hamin06" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="footer-icon linkedin" />
         </a>
@@ -15,6 +18,7 @@ const Footer = () => {
           <FaEnvelope className="footer-icon mail" />
         </a>
       </footer>
+      </div>
     );
 }
 

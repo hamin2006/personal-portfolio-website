@@ -6,7 +6,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
     bottom: 0;
     width: 100%;
   }
@@ -41,3 +40,32 @@
     outline: none;
   }
   
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.foo {
+  height: 2px;
+  width: 80%;
+  margin: 1.5rem auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #ffffff 20%,
+    #ffffff 80%,
+    transparent
+  );
+  border: 0;
+}
