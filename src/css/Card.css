@@ -141,19 +141,13 @@
     font-style: italic; 
   }
 
-  .description p {
+  .card-footer {
     font-family: 'Roboto', sans-serif;
     font-size: 16px; 
     color: #ffffffdd; 
     line-height: 1.6; 
     margin-top: 10px;
     text-align: justify; 
-  }
-
-  .card-footer {
-    color: #ffffff88;
-    margin-top: 5px;
-    font-size: 8px;
   }
 
   .img-container {

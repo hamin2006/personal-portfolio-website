@@ -1,0 +1,95 @@
+
+.education-card {
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 50px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: 1px solid black;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .education-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Left section (logo) */
+  .education-card-left {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+  }
+  
+  .education-logo {
+    width: 80%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  /* Right section (content) */
+  .education-card-right {
+    flex: 1;
+  }
+  
+  /* Header section */
+  .education-card-header {
+    width: 650px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .education-card-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .education-dates {
+    width: 650px;
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+    font-style: italic;
+    text-align: end;
+  }
+  
+  /* Body section */
+  .education-card-body h3 {
+    margin: 10px 0;
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .education-description {
+    width: 650px;
+    margin: 0;
+    font-size: 1rem;
+    color: white;
+    line-height: 1.6;
+  }
+  
+  /* Footer section */
+  .education-card-footer {
+    width: 650px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    text-align: right;
+  }
+  .education-card-degree {
+    width: 650px;
+    color: white;
+    font-size: larger;
+    font-weight: 900;
+    font-style: italic;
+    margin-bottom: 5px;
+  }

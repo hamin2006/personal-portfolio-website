@@ -7,7 +7,23 @@
 
 .card-group {
     margin-top: 50px;
+    margin-bottom: 150px;
     display: flex;
     flex-direction: column;
     gap: 3rem;
+}
+
+.exp-break {
+    margin-top: 10px;
+    height: 2px;
+    width: 60%;
+    background-color: #34495e;
+    border: none;
+    background: linear-gradient(
+    to right,
+    transparent,
+    #34495e 20%,
+    #34495e 80%,
+    transparent
+  );
 }

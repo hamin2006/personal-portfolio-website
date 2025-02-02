@@ -18,12 +18,12 @@ const Card = ({svg, company, img, badge, title, timePeriod, description, backgro
               <small className="badge">{badge}</small>
               <div className="description">
                 <div className="in-line">
-                  <div className="title">{title}</div>
+                  <div style = {{"color" : backgroundColor}} className="title">{title}</div>
                   <div className="time-period">{timePeriod}</div>
                 </div>
-                <p className="card-footer">
+                <text className="card-footer">
                 {description}
-                </p>
+                </text>
               </div>
             </div>
           </div>
