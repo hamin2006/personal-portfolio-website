@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:700,900');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
   
+  .home-wrapper {
+    font-family: 'Raleway', sans-serif;
+  }
   .body2 {
-    font-family: 'Poppins', sans-serif;
     display: flex;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
   }
   
@@ -15,23 +18,22 @@
     margin-top: 30vh;
     color: #333;
     width: 100%;
-    margin-left: 100px;
+    margin-left: 7vw;
   }
   
   h1 {
+    font-family: "Poppins", sans-serif;
     font-size: 7rem; /* Large size for first line */
-    color: #2c3e50; /* Deep Navy Blue */
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.1), -2px -2px 6px rgba(0, 0, 0, 0.1);
+    color:#062930;
+    text-shadow: 0 20px 40px rgba(0,0,0,.5);
   }
   
   h2 {
     font-size: 4rem; /* Slightly smaller size for second line */
-    color: #34495e; /* Charcoal Gray */
-    font-weight: 600;
     letter-spacing: 1px;
-    opacity: 0.85; /* Slightly reduced opacity for subtle emphasis */
+    font-weight: 800;
+    color:#062930;
+    text-shadow: 0 20px 40px rgba(0,0,0,.5);
   }
 
   .gold-text {
@@ -69,3 +71,123 @@
     opacity: 0;
   }
 }
+
+.about-header {
+  margin-left: 7vw;
+}
+.about-me {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
+  gap: 10vw
+}
+
+.about-me img {
+  width: 500px;
+  height: 500px
+}
+
+.about-me p {
+  width: 40vw;
+}
+
+.subheader {
+  font-size: 2rem;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  height: 150vh;
+  text-align: center;
+  gap: 10vh
+}
+
+.languages {
+  margin-bottom: 20px;
+  margin-top: 10vh;
+}
+
+.subgroup-one, .subgroup-two {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10vh;
+}
+
+.subgroup-one {
+  margin-top: -10vh;
+}
+
+.subgroup-one > div, .subgroup-two > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.skills-group {
+  height: 50vh;
+  width: 40vw;
+}
+
+.languages-group {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+  gap: 4vw;
+}
+
+.skills-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 
+              -5px -5px 15px rgba(255, 255, 255, 0.1);
+              transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.skills-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 0 25px #fef4f5;
+}
+
+.skills-image {
+  width: 50%;
+  height: 50%;
+}
+
+.skills-name {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.web-dev {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 92%;
+  gap: 5vw;
+}
+
+
+
+
+
+
