@@ -37,7 +37,7 @@ const Navbar = () => {
 
   const sendResume = () => {
     const link = document.createElement("a");
-    link.href = "/Harsh_Amin_Resume (23).pdf";
+    link.href = "/Harsh_Amin_Resume.pdf";
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.click();

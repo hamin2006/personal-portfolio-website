@@ -1,11 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:700,900');
+
+.outer {
+  height: 90%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.connect {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 5rem;
+  color:#062930;
+  text-shadow: 0 20px 40px rgba(0,0,0,.5);
+  margin:0;
+  padding-top: 3vh;
+}
+
+.main {
+  flex-grow: 1; /* Pushes the footer down */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
 .please {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
-    height: 100vh;
-    margin-top: -15vh;
+    flex-grow: 1;
+    margin-bottom: 6.5vh;
 }
+
 .form-container {
     width: 400px;
     background: transparent;

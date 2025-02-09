@@ -26,8 +26,8 @@ function Home() {
   ];
   
   const webDevFrameworks = ["React.js", "Node.js", "Express.js", "Next.js", "Flask", "FastAPI"];
-  const mlframeworks = ["Pandas", "NumPy", "Matplotlib", "Scikit-learn", "dplyr", "ggplot2", "OpenCV", "MediaPipe", ""];
-  const testingframeworks = ["JUnit", "Mocha.js", "Chai.js", "PyTest", "Selenium", ""];
+  const mlframeworks = ["Pandas", "NumPy", "Matplotlib", "Scikit-learn", "TensorFlow", "dplyr", "ggplot2", "OpenCV", "MediaPipe"];
+  const testingframeworks = ["JUnit", "Mocha.js", "Chai.js", "PyTest", "Selenium"];
   const tools = ["AWS", "PostgreSQL", "MongoDB", "Postman", "Git", "JupyterLab", "Docker", "SQLAlchemy", "Linux/Unix"];
   const [currentLine, setCurrentLine] = useState("");
   const [index, setIndex] = useState(0);
@@ -121,14 +121,48 @@ function Home() {
 
           <div className="ml skills-group">
             <h2 className="subheader">Data Science/Machine Learning</h2>
+            <div className="ml-items">
+              {mlframeworks.map((ml, index) => (
+                <div key={index}>
+                  <div  className="skills-card" style = {{}}>
+                    <img src={"/skillsimgs/"+ml + ".png"} alt={ml} className="skills-image" />
+                    
+                  </div>
+                    <p className="skills-name">{ml}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="subgroup-two">
-          <div className="testing skills-group">
-            <h2 className="subheader">Testing</h2>
-          </div>
           <div className="tools skills-group">
             <h2 className="subheader">Dev Tools</h2>
+            <div className="ml-items">
+              {tools.map((tool, index) => (
+                <div key={index}>
+                  <div  className="skills-card" style = {{}}>
+                    <img src={"/skillsimgs/"+tool + ".png"} alt={tool} className="skills-image" />
+                    
+                  </div>
+                    <p className="skills-name">{tool}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="testing skills-group">
+            <h2 className="subheader">Testing</h2>
+            <div className="web-dev">
+              {testingframeworks.map((test, index) => (
+                <div key={index}>
+                  <div  className="skills-card" style = {{}}>
+                    <img src={"/skillsimgs/"+test + ".png"} alt={test} className="skills-image" />
+                    
+                  </div>
+                    <p className="skills-name">{test}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

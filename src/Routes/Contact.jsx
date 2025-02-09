@@ -32,46 +32,49 @@ function Contact() {
   };
 
   return (
-    <div>
-      <div className="please">
-      <Socials />
-        <div class="form-container">
-          <form class="form" onSubmit = {handleSubmit}>
-          <div class="form-group">
-            <label>Name</label>
-            <input 
-              type="text" 
-              name = "name" 
-              value = {submission.name} 
-              required 
-              onChange = {handleChange}>
-            </input>
-          </div>
+    <div className="outer">
+      <h1 className="connect">Connect With Me!</h1>
+      <div className="main">
+        <div className="please">
+          <Socials />
+          <div class="form-container">
+            <form class="form" onSubmit = {handleSubmit}>
+            <div class="form-group">
+              <label>Name</label>
+              <input 
+                type="text" 
+                name = "name" 
+                value = {submission.name} 
+                required 
+                onChange = {handleChange}>
+              </input>
+            </div>
 
-          <div class="form-group">
-            <label>Email</label>
-            <input 
-              type="text" 
-              name = "email" 
-              value = {submission.email} 
-              required 
-              onChange = {handleChange}>
-            </input>
-          </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input 
+                type="text" 
+                name = "email" 
+                value = {submission.email} 
+                required 
+                onChange = {handleChange}>
+              </input>
+            </div>
 
-          <div class="form-group">
-            <label for="textarea">Send me a message!</label>
-            <textarea 
-              name="message" 
-              value = {submission.message} 
-              required 
-              onChange = {handleChange} 
-              rows="10" 
-              cols="50" > 
-            </textarea>
+            <div class="form-group">
+              <label for="textarea">Send me a message!</label>
+              <textarea 
+                name="message" 
+                value = {submission.message} 
+                required 
+                onChange = {handleChange} 
+                rows="10" 
+                cols="50" > 
+              </textarea>
+            </div>
+            <button class="form-submit-btn" type="submit">Submit</button>
+            </form>
           </div>
-          <button class="form-submit-btn" type="submit">Submit</button>
-          </form>
         </div>
       </div>
       <Footer/>
