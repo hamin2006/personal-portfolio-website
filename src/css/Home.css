@@ -21,8 +21,7 @@
     margin-left: 7vw;
   }
   
-  h1 {
-    font-family: "Poppins", sans-serif;
+  .hamin {
     font-size: 7rem; /* Large size for first line */
     color:#062930;
     text-shadow: 0 20px 40px rgba(0,0,0,.5);

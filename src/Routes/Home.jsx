@@ -73,7 +73,7 @@ function Home() {
     <div className="home-wrapper">
       <div className="body2">
         <div className="textWrap">
-          <h1>Hi! I'm <span className="gold-text">Harsh Amin</span></h1>
+          <div className="hamin">Hi! I'm <span className="gold-text">Harsh Amin</span></div>
           <h2>
             I'm a <span className="gold-text">{currentLine}</span>
             <div className="cursor"></div>

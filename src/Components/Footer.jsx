@@ -1,10 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion"
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 import "../css/Footer.css"
 
 const Footer = () => {
     return (
-      <div>
+      <motion.div
+      initial={{ opacity: 0, y: 50 }} // Start invisible and 20px below
+      animate={{ opacity: 1, y: 0 }} // Fade in and move to normal position
+      transition={{ delay:0.3, duration: 0.8}}>
         <hr className="foo"/>
       <footer className="footer">
         
@@ -18,7 +22,7 @@ const Footer = () => {
           <FaEnvelope className="footer-icon mail" />
         </a>
       </footer>
-      </div>
+      </motion.div>
     );
 }
 
