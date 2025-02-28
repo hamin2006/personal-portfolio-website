@@ -189,7 +189,7 @@ function Experience() {
   return (
     <div>
     <div className="wrapper">
-      <h2>Experience</h2>
+      <h2 className="experience-title">Experience</h2>
       <hr className="exp-break"/>
         <div className="card-group">
           <Card svg = {launchpadSvg} 
@@ -227,7 +227,7 @@ function Experience() {
                 description= {descJA}
                 backgroundColor = "#01a3b2"/>
         </div>
-      <h2>Education</h2>
+      <h2 className="experience-title">Education</h2>
       <hr className="exp-break"/>
       <Education
         institution="University of British Columbia"

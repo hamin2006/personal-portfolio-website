@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import Projects from "./Routes/Projects";
 import Experience from "./Routes/Experience";
 import Contact from "./Routes/Contact";
+import ContactPage from "./Routes/contact-page";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/experience" element={<Experience />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
   );
