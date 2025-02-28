@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useMemo} from "react";
+import { motion } from "framer-motion";
 import "../css/Home.css"
 import Footer from "../Components/Footer";
 function Home() {
@@ -73,11 +74,19 @@ function Home() {
     <div className="home-wrapper">
       <div className="body2">
         <div className="textWrap">
-          <div className="hamin">Hi! I'm <span className="gold-text">Harsh Amin</span></div>
-          <h2>
+          <motion.div className="hamin"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay:0.3, duration: 0.8}}>
+              Hi! I'm <span className="gold-text">Harsh Amin</span>
+          </motion.div>
+          <motion.h2
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay:0.3, duration: 0.8}}>
             I'm a <span className="gold-text">{currentLine}</span>
             <div className="cursor"></div>
-          </h2>
+          </motion.h2>
         </div>
       </div>
       <h2 className="about-header">About Me</h2>
