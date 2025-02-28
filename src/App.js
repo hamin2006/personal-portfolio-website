@@ -5,7 +5,6 @@ import "./css/App.css"
 import Navbar from "./Components/Navbar";
 import Projects from "./Routes/Projects";
 import Experience from "./Routes/Experience";
-import Contact from "./Routes/Contact";
 import ContactPage from "./Routes/contact-page";
 
 function App() {
