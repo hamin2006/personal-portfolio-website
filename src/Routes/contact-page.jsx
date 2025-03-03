@@ -58,7 +58,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-[90vh] bg-gradient-to-br from-indigo-50">
+    <div className="flex flex-col min-h-[93.5vh] bg-gradient-to-br from-indigo-50">
       <div className="flex flex-col flex-grow md:flex-row ">
         {/* Animated Illustration Side */}
         <motion.div
