@@ -55,6 +55,26 @@ const projectsData = [
     live: "https://project5.yourdomain.com",
     color: "#F86624",
   },
+  {
+    id: 5,
+    title: "Real-time Chat Application",
+    description: "A real-time messaging platform with video calling capabilities.",
+    tags: ["React", "Socket.io", "WebRTC", "Firebase"],
+    image: "/placeholder.svg?height=600&width=800",
+    github: "https://github.com/yourusername/project5",
+    live: "https://project5.yourdomain.com",
+    color: "#F86624",
+  },
+  {
+    id: 5,
+    title: "Real-time Chat Application",
+    description: "A real-time messaging platform with video calling capabilities.",
+    tags: ["React", "Socket.io", "WebRTC", "Firebase"],
+    image: "/placeholder.svg?height=600&width=800",
+    github: "https://github.com/yourusername/project5",
+    live: "https://project5.yourdomain.com",
+    color: "#F86624",
+  },
 ]
 
 export default function Projects() {
@@ -184,7 +204,7 @@ export default function Projects() {
 
           {/* Project Thumbnails */}
           <motion.div
-            className="flex gap-4 pt-3 pb-10 px-2 snap-x no-scrollbar"
+            className="flex gap-4 overflow-x-auto py-2 px-2 snap-x"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}

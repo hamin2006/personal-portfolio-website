@@ -52,10 +52,6 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo"><img src = {logo} alt = "Logo" onClick = {sendHome} className="logo-img"></img></div>
-
-      <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X /> : <Menu />}
-      </button>
       
       <ul className="nav-links hidden md:flex">
         <li onClick = {sendHome}>Home</li>
@@ -65,13 +61,17 @@ const Navbar = () => {
         <li onClick = {sendContact}>Contact</li>
       </ul>
 
-      <ul className={`nav-links-mobile md:hidden flex flex-col items-center w-full transition-all ${menuOpen ? "block" : "hidden"}`}>
+      <ul className={`nav-links-mobile md:hidden flex flex-col items-center w-full ${menuOpen ? "block" : "hidden"}`}>
         <li onClick={sendHome}>Home</li>
         <li onClick={sendResume}>Resume</li>
         <li onClick={sendProjects}>Projects</li>
         <li onClick={sendExperience}>Experience</li>
         <li onClick={sendContact}>Contact</li>
       </ul>
+
+      <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <X /> : <Menu />}
+      </button>
     </nav>
   );
 }

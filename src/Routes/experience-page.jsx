@@ -9,7 +9,7 @@ export default function ExperiencePage() {
   return (
     <div className = "flex flex-col bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 pt-16 px-4 sm:px-6">
       <div className="min-h-screen flex items-center justify-center ">
-        <div className="max-w-8xl">
+        <div className="max-w-7xl">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-800 dark:text-slate-100"
             initial={{ opacity: 0, y: -20 }}
@@ -71,7 +71,7 @@ function ExperienceTimeline() {
       title: "Incoming Software Developer Intern",
       company: "UBC X AWS Cloud Innovation Center",
       logo: "/cic.png",
-      period: "2025 May - 2025 Aug",
+      period: "2025 May - 2025 Dec",
       description:
         "Excited to be working on projects revolved around AWS and Artificial Intelligence.",
       skills: ["AWS", "AI"],
@@ -137,24 +137,23 @@ function EducationTimeline() {
   const education = [
     {
       id: 1,
-      degree: "Bachelor of Science in Computer Science",
+      degree: "BSc in Computer Science",
       school: "University of British Columbia",
-      logo: "/placeholder.svg?height=80&width=80",
-      period: "2010 - 2014",
-      description:
-        "Focused on software development and web technologies. Participated in multiple hackathons and won first place in the University's annual coding competition.",
-      courses: ["Data Structures", "Web Development", "Database Systems", "Software Engineering"],
-      link: "#",
+      logo: "/ubc.png",
+      period: "2023 - 2027",
+      description:"<b>GPA:</b> 89% <br/> <b>Awards:</b> Trek Academic Excellence Scholarship <br/> <b>Extracurriculars:</b> UBC Launch Pad Design Team, Intramural Basketball, Weight Lifting and Entrepreneurship Club",
+      courses: ["Data Structures", "Web Development", "Software Engineering", "Discrete Mathematics", "Computer Systems", "Machine Learning"],
+      link: "https://www.ubc.ca/",
     },
     {
-      id: 3,
-      degree: "Web Development Bootcamp",
-      school: "Code Academy",
-      logo: "/placeholder.svg?height=80&width=80",
-      period: "2009",
+      id: 2,
+      degree: "Certications",
+      school: "Udemy",
+      logo: "/udemy.png",
+      period: "May 2024 - Aug 2024",
       description:
-        "Intensive 12-week program covering full-stack web development. Built multiple projects including an e-commerce platform and a social media application.",
-      courses: ["HTML/CSS", "JavaScript", "React", "Node.js"],
+        "Completed two Udemy courses. One on Full Stack Web Development, learning how to build responsive websites and web applications. And another on Machine Learning, diving into the world of AI and data science using extensive frameworks and libraries in Python and R.",
+      courses: ["The Complete 2024 Web Development Bootcamp", "Machine Learning A-Z"],
       link: "#",
     },
   ]
@@ -170,12 +169,12 @@ function EducationTimeline() {
           <TimelineCard
             key={edu.id}
             data={{
-              title: edu.degree,
-              company: edu.school,
+              title: edu.school,
+              company: edu.degree,
               logo: edu.logo,
               period: edu.period,
               description: edu.description,
-              skills: edu.courses,
+              courses: edu.courses,
               link: edu.link,
             }}
             index={index}
@@ -188,7 +187,7 @@ function EducationTimeline() {
   )
 }
 
-function TimelineCard({ data, index, isLeft, icon }) {
+function TimelineCard({ data, index, isLeft, icon, type }) {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -201,7 +200,7 @@ function TimelineCard({ data, index, isLeft, icon }) {
   return (
     <div
       ref={cardRef}
-      className={`relative mb-24 flex gap-x-[5rem] md:items-center`}
+      className={`relative mb-24 flex gap-x-[5rem] items-end md:items-center`}
     >
       {/* Timeline dot */}
       <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
@@ -257,14 +256,26 @@ function TimelineCard({ data, index, isLeft, icon }) {
               <span>{data.period}</span>
             </div>
 
-            <p className="text-slate-600 dark:text-slate-300 mb-4">{data.description}</p>
+            <p className="text-slate-600 dark:text-slate-300 mb-4" dangerouslySetInnerHTML={{ "__html": data.description }}></p>
 
             <div className="mb-4">
               <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
                 {data.skills ? "Skills & Technologies" : "Courses"}
               </h4>
               <div className="flex flex-wrap gap-2">
-                {data.skills.map((skill, i) => (
+                {data.skills ? data.skills.map((skill, i) => (
+                  <span
+                    key={i}
+                    className={`text-xs px-2.5 py-1 rounded-full ${
+                      isLeft
+                        ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                        : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                    }`}
+                  >
+                    {skill}
+                  </span>
+                )) : 
+                data.courses.map((skill, i) => (
                   <span
                     key={i}
                     className={`text-xs px-2.5 py-1 rounded-full ${

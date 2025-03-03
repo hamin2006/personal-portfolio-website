@@ -43,12 +43,12 @@
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
-    cursor: pointer;
+    cursor: pointer;  
     
   }
   .logo-img {
-    height: 50px;
-    width: auto; 
+    width: 80px; 
+    height: auto;
   }
   .nav-links {
     list-style: none;
@@ -69,11 +69,18 @@
   }
   .nav-links-mobile {
     list-style: none;
-    gap: 5px;
+    gap: 7px;
     padding: 0;
   }
 
-  .nav-links-mobile li {
+  .nav-links-mobile li{
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    position: relative;
     cursor: pointer;
   }
   
@@ -88,12 +95,31 @@
     background-color: #191970	;
     transition: width 0.3s ease-in-out;
   }
+
+  .nav-links-mobile li::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #191970	;
+    transition: width 0.3s ease-in-out;
+  }
   
   .nav-links li:hover::after {
     width: 100%;
   }
   
+  .nav-links-mobile li:hover::after {
+    width: 100%;
+  }
+
   .nav-links li:hover {
+    color: #191970	;
+  }
+
+  .nav-links-mobile li:hover {
     color: #191970	;
   }
   
