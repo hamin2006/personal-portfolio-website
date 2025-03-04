@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import "../css/Home.css"
 import Footer from "../Components/Footer";
 function Home() {
+  document.title = "Harsh Amin | Home";
   const lines = useMemo(() => 
     [
       "Computer Science Student",

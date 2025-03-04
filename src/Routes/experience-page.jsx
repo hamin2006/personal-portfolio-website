@@ -1,11 +1,14 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Calendar, Briefcase, GraduationCap, ExternalLink } from "lucide-react"
 import Footer from "../Components/Footer"
 
 export default function ExperiencePage() {
-  const [activeTab, setActiveTab] = useState("experience")
-
+  const [activeTab, setActiveTab] = useState("experience");
+  useEffect(() => {
+    document.title = "Harsh Amin | Experience";
+  }, []);
+  
   return (
     <div className = "flex flex-col bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 pt-16 px-4 sm:px-6">
       <div className="min-h-screen flex items-center justify-center ">
@@ -31,7 +34,7 @@ export default function ExperiencePage() {
           <div className="flex justify-center mb-12">
             <div className="inline-flex bg-slate-200 dark:bg-slate-800 p-1 rounded-xl">
               <button
-                onClick={() => setActiveTab("experience")}
+                onClick={() => {document.title = "Harsh Amin | Experience"; setActiveTab("experience");}}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeTab === "experience"
                     ? "bg-white dark:bg-slate-700 text-slate-800 dark:text-white shadow-sm"
@@ -42,7 +45,7 @@ export default function ExperiencePage() {
                 Experience
               </button>
               <button
-                onClick={() => setActiveTab("education")}
+                onClick={() => {document.title = "Harsh Amin | Education"; setActiveTab("education");}}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeTab === "education"
                     ? "bg-white dark:bg-slate-700 text-slate-800 dark:text-white shadow-sm"

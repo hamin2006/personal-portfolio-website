@@ -78,6 +78,7 @@ const projectsData = [
 ]
 
 export default function Projects() {
+  document.title = "Harsh Amin | Projects";
   const [activeProject, setActiveProject] = useState(null)
   const [direction, setDirection] = useState(0)
   const constraintsRef = useRef(null)

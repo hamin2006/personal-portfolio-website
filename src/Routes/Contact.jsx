@@ -8,6 +8,7 @@ import Footer from "../Components/Footer";
 function Contact() {
   const [submission, setSubmission] = useState({name:"", email:"", message:""});
   const navigate = useNavigate();
+  document.title = "Harsh Amin | Contact"; 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +25,6 @@ function Contact() {
           console.log('FAILED...', error.text);
         },
       );
-    
   };
 
   const handleChange = (e) => {
