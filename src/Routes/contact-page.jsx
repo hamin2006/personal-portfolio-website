@@ -14,6 +14,7 @@ export default function ContactPage() {
   })
   const [formStatus, setFormStatus] = useState("idle") // idle, submitting, success
   const [focusedField, setFocusedField] = useState(null)
+  document.title = "Harsh Amin | Contact Me"
 
 
   const handleChange = (e) => {

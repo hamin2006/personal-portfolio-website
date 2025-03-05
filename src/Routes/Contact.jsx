@@ -9,7 +9,6 @@ import Navbar from "../Components/Navbar";
 function Contact() {
   const [submission, setSubmission] = useState({name:"", email:"", message:""});
   const navigate = useNavigate();
-  document.title = "Harsh Amin | Contact"; 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,7 +18,6 @@ function Contact() {
         (response) => {
           alert("Sent " + response.text);
           console.log('SUCCESS! ' + response.text);
-          navigate("/contact");
         },
         (error) => {
           alert("Unable to send: " + error.text);
