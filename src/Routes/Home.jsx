@@ -2,6 +2,7 @@ import React, {useState, useEffect, useMemo} from "react";
 import { motion } from "framer-motion";
 import "../css/Home.css"
 import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 function Home() {
   document.title = "Harsh Amin | Home";
   const lines = useMemo(() => 
@@ -73,6 +74,7 @@ function Home() {
 
   return (
     <div className="home-wrapper">
+      <Navbar/>
       <div className="body2">
         <div className="textWrap">
           <motion.div className="hamin"

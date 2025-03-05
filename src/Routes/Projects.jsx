@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react"
 import Footer from "../Components/Footer"
+import Navbar from "../Components/Navbar"
 
 // Sample project data - replace with your actual projects
 const projectsData = [
@@ -110,7 +111,9 @@ export default function Projects() {
   }, [activeProject])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 text-white pt-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900">
+      <Navbar />
+    <div className="text-white pt-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.h1
           className="text-5xl font-bold mb-2 text-center"
@@ -240,6 +243,7 @@ export default function Projects() {
         </div>
       </div>
       <Footer />
+    </div>
     </div>
   )
 }

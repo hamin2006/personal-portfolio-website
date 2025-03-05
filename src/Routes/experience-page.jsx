@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Calendar, Briefcase, GraduationCap, ExternalLink } from "lucide-react"
 import Footer from "../Components/Footer"
+import Navbar from "../Components/Navbar"
 
 export default function ExperiencePage() {
   const [activeTab, setActiveTab] = useState("experience");
@@ -10,8 +11,9 @@ export default function ExperiencePage() {
   }, []);
   
   return (
-    <div className = "flex flex-col bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 pt-16 px-4 sm:px-6">
-      <div className="min-h-screen flex items-center justify-center ">
+    <div className = "flex flex-col w-full bg-gradient-to-br from-slate-950">
+      <Navbar />
+      <div className="min-h-screen flex items-center justify-center pt-16">
         <div className="max-w-7xl">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-800 dark:text-slate-100"

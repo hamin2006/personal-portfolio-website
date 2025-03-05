@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import emailjs from '@emailjs/browser';
 import { Send, CheckCircle, Mail, Instagram, Twitter } from "lucide-react"
 import Footer from "../Components/Footer"
+import Navbar from "../Components/Navbar";
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
@@ -58,7 +59,8 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-[93.5vh] bg-gradient-to-br from-indigo-50">
+    <div className="flex flex-col min-h-[100vh] bg-gradient-to-br from-indigo-50">
+      <Navbar />
       <div className="flex flex-col flex-grow md:flex-row ">
         {/* Animated Illustration Side */}
         <motion.div

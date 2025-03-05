@@ -4,6 +4,7 @@ import "../css/Contact.css"
 import emailjs from '@emailjs/browser';
 import Socials from "../Components/Socials";
 import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 function Contact() {
   const [submission, setSubmission] = useState({name:"", email:"", message:""});
@@ -33,6 +34,7 @@ function Contact() {
 
   return (
     <div className="outer">
+      <Navbar/> 
       <h1 className="connect">Connect With Me!</h1>
       <div className="main">
         <div className="please">
