@@ -117,7 +117,7 @@ export default function Projects() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900">
       <Navbar />
-    <div className="text-white pt-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div className="text-white pt-10 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <motion.h1
           className="text-5xl font-bold mb-2 text-center"
@@ -128,7 +128,7 @@ export default function Projects() {
           My Projects
         </motion.h1>
         <motion.p
-          className="text-xl text-gray-300 mb-16 text-center max-w-2xl mx-auto"
+          className="text-lg text-center text-slate-400 mb-16 text-center max-w-2xl mx-auto"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
