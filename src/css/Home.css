@@ -7,6 +7,8 @@
   
   .home-wrapper {
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
   }
   .body2 {
     display: flex;
@@ -74,19 +76,8 @@
 .about-header {
   margin-left: 7vw;
 }
-.about-me {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  gap: 10vw
-}
 
-.about-me img {
-  width: 500px;
-  height: 500px
-}
+
 
 .about-me p {
   width: 40vw;
@@ -99,24 +90,31 @@
 .skills {
   display: flex;
   flex-direction: column;
-  height: 160vh;
   text-align: center;
   gap: 10vh
 }
 
 .languages {
   margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .subgroup-one, .subgroup-two {
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
   gap: 10vh;
 }
 
 .subgroup-one {
   margin-top: -10vh;
+}
+
+.subgroup-two {
+  margin-top: 10vh;
 }
 
 .subgroup-one > div, .subgroup-two > div {
@@ -136,15 +134,6 @@
   width: 40vw;
 }
 
-.languages-group {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 10vh 0px;
-  gap: 4vw;
-}
 
 .skills-card {
   display: flex;

@@ -73,9 +73,9 @@ function Home() {
   }, [charIndex, isDeleting, speed, index, lines]);
 
   return (
-    <div className="home-wrapper">
+    <div className="home-wrapper min-h-screen flex flex-col flex-grow">
       <Navbar/>
-      <div className="body2">
+      <div className="body2 ">
         <div className="textWrap">
           <motion.div className="hamin"
             initial={{ opacity: 0, x: 50 }}
@@ -93,16 +93,16 @@ function Home() {
         </div>
       </div>
       <h2 className="about-header">About Me</h2>
-      <div className="about-me">
+      <div className="about-me flex flex-col md:flex-row h-screen justify-center items-center gap-[10vw]">
         <img className = "my-flick" src="/logo512.png" alt="Harsh" />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et luctus orci. Mauris ligula eros, venenatis et sagittis non, feugiat imperdiet massa. Cras tempor risus vitae leo fringilla interdum. Vestibulum non convallis nisi, accumsan iaculis magna. Vivamus quis massa nisi. Fusce venenatis, orci quis interdum vulputate, ligula mi sagittis augue, a semper lectus enim id ipsum. Integer vitae magna non nibh molestie volutpat at dignissim orci. Aliquam quis sem at quam convallis malesuada sed ac libero. Cras eget imperdiet ipsum, at pharetra erat. Aliquam finibus ipsum id magna faucibus malesuada. Morbi pretium sem sit amet mollis finibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec pulvinar dolor a elit scelerisque mollis. Curabitur iaculis, leo eget accumsan mollis, massa lorem facilisis urna, eu rutrum ante risus sit amet tortor. Fusce tincidunt sollicitudin eleifend. Praesent sed libero sed metus pretium pretium finibus vitae arcu.</p>
+        <p>helloooo</p>
       </div>
       <h2 className="about-header">Skills</h2>
       <div className="skills">
         
         <div className="languages">
           <h2 className="subheader">Languages</h2>
-          <div className="languages-group">
+          <div className="languages-group relative flex-col grid grid-cols-3 md:flex md:flex-row items-center justify-center my-[10vh] gap-[4vw]">
             {languages.map((language, index) => (
               <div key={index}>
                 <div  className="skills-card" style = {{}}>
@@ -115,7 +115,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="subgroup-one">
+        <div className="subgroup-one flex-col md:flex-row">
           <div className="skills-group">
             <h2 className="subheader">Web Development</h2>
             <div className="web-dev">
@@ -146,7 +146,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="subgroup-two">
+        <div className="subgroup-two flex-col md:flex-row">
           <div className="tools skills-group">
             <h2 className="subheader">Dev Tools</h2>
             <div className="ml-items">
