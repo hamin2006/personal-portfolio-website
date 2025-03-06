@@ -125,22 +125,34 @@ function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 50 }}
         transition={{ duration: 0.8 }}
-        viewport={{ once: true }}>About Me</motion.h2>
+        viewport={{ once: true }}>About Me
+      </motion.h2>
 
-        <div className="about-me flex flex-col md:flex-row h-screen justify-center items-center gap-[10vw]">
+        <div className="about-me flex flex-col md:flex-row h-[90vh] justify-center items-center gap-[10vw]">
           <motion.img 
-          className = "my-flick w-[30%]" 
+          className = "my-flick w-[40%]" 
           src="/logo512.png" 
           alt="Harsh" 
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}/>
+
           <motion.p
+          className="about-text w-[80%] md:w-[40%] text-[#333] text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem]"
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 50 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}>helloooo</motion.p>
+          viewport={{ once: true }}>
+            
+            With a strong foundation in computer science and mathematics, I am driven by a passion for solving complex problems and building impactful software solutions. Currently pursuing my Bachelor's in Computer Science at the University of British Columbia, My variety of extracurriculars, coupled with my academic excellence, allow me to enjoy and thrive in fast-paced, collaborative environments where innovation meets real-world application.
+            <br />
+            <br />
+            From developing AI-powered applications to optimizing cloud-based systems, I enjoy tackling challenges that push my technical and analytical skills to new heights. My experience spans through full-stack development, cloud development, and machine learning, with a keen interest in leveraging technology to drive efficiency and sustainability. Particularly I'm passionate about working on projects that have a tangible impact on people and society.
+            <br />
+            <br />
+            Outside of Computer Science I love to play basketball, hockey, lift weights, and listen to new music. Whether it’s on the ice or in front of a whiteboard debugging a tough problem, I embrace challenges with resilience and curiosity.
+          </motion.p>
         </div>
       <motion.h2 
       className="about-header"
