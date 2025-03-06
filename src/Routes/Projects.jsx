@@ -59,6 +59,7 @@ const projectsData = [
     tags: ["HTML", "CSS", "JavaScript"],
     image: "/simonsays.png",
     github: "https://github.com/hamin2006/Simon-Says",
+    live: "https://hamin2006.github.io/Simon-Says/",
     color: "#AAFF00",
   },
   {
@@ -67,8 +68,7 @@ const projectsData = [
     description: "As a study tool, I created a quiz maker application that allows users to create, edit, and take quizzes. The application uses Java and Swing GUI to create a user-friendly interface for users to interact with. The application uses local serialization to a JSON file in order to store quiz data and user information.",
     tags: ["Java", "Swing GUI", "JSON", "Serialization", "Test Driven Development", "JUnit", "OOP Design Patterns"],
     image: "/quizmaker.png",
-    github: "https://github.com/yourusername/project5",
-    live: "https://project5.yourdomain.com",
+    github: "https://github.com/hamin2006/Quiz-Maker---Robust",
     color: "#F86624",
   },
   {
@@ -255,7 +255,7 @@ export default function Projects() {
 function ProjectCard({ project, isActive }) {
   return (
     <motion.div
-      className="bg-gray-800/50 backdrop-blur-lg rounded-xl overflow-hidden h-full shadow-2xl"
+      className="bg-gray-800/50 overflow-y-auto backdrop-blur-lg rounded-xl overflow-hidden h-full shadow-2xl"
       style={{
         boxShadow: `0 10px 30px -5px ${project.color}40, 0 0 5px ${project.color}20`,
         background: `linear-gradient(135deg, #1f2937 0%, #111827 100%)`,
@@ -264,7 +264,7 @@ function ProjectCard({ project, isActive }) {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 h-full">
         <motion.div
-          className="relative overflow-hidden"
+          className="relative"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
