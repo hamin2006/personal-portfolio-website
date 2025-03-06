@@ -75,23 +75,28 @@ function Home() {
   return (
     <div className="home-wrapper min-h-screen flex flex-col flex-grow">
       <Navbar/>
-      <div className="body2 ">
-        <div className="textWrap">
-          <motion.div className="hamin"
+      <div className="body2 flex overflow-hidden h-screen px-4">
+        <div className="textWrap text-center sm:text-left mt-[20vh] sm:mt-[25vh] md:mt-[30vh] text-[#333] w-full sm:w-auto sm:ml-[5vw] md:ml-[7vw]">
+          <motion.div
+            className="hamin font-semibold text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[7rem] text-[#062930]"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay:0.3, duration: 0.8}}>
-              Hi! I'm <span className="gold-text">Harsh Amin</span>
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            Hi I'm <span className="gold-text">Harsh Amin</span>
           </motion.div>
           <motion.h2
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay:0.3, duration: 0.8}}>
+            className="text-[2rem] sm:text-[2rem] md:text-[3rem] lg:text-[4rem] tracking-[0.5px] sm:tracking-[1px] font-extrabold text-[#062930]"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
             I'm a <span className="gold-text">{currentLine}</span>
-            <div className="cursor"></div>
+            <div className="cursor h-[30px] sm:h-[30px] md:h-[40px] lg:h-[50px]"></div>
           </motion.h2>
         </div>
       </div>
+
       <h2 className="about-header">About Me</h2>
       <div className="about-me flex flex-col md:flex-row h-screen justify-center items-center gap-[10vw]">
         <img className = "my-flick" src="/logo512.png" alt="Harsh" />
