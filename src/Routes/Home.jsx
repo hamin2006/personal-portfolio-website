@@ -107,7 +107,7 @@ function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0}}
           transition={{ delay: 1.45, duration: 0.5 }}
-          className="absolute bottom-10 flex justify-center w-[100vw] text-center"
+          className="absolute bottom-10 flex justify-center w-[95vw] text-center"
         >
           <button
             onClick={scrollDown}
@@ -129,7 +129,7 @@ function Home() {
 
         <div className="about-me flex flex-col md:flex-row h-screen justify-center items-center gap-[10vw]">
           <motion.img 
-          className = "my-flick" 
+          className = "my-flick w-[30%]" 
           src="/logo512.png" 
           alt="Harsh" 
           whileInView={{ opacity: 1, x: 0 }}
