@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import emailjs from '@emailjs/browser';
-import { Send, CheckCircle, Mail, Instagram, Twitter } from "lucide-react"
+import { Send, CheckCircle, Mail, Instagram, Phone } from "lucide-react"
 import Footer from "../Components/Footer"
 import Navbar from "../Components/Navbar";
 
@@ -97,17 +97,17 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-center space-x-4 mb-3">
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
+                  <Phone className="h-5 w-5 text-blue-600" />
+                </div>
+                <span>(587)-664-9195</span>
+              </div>
+
+              <div className="flex items-center space-x-4 mb-3">
                 <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">
                   <Instagram className="h-5 w-5 text-pink-600" />
                 </div>
                 <span>@aminharsh317</span>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">
-                  <Twitter className="h-5 w-5 text-pink-600" />
-                </div>
-                <span>@aminharsh3171</span>
               </div>
             </motion.div>
           </div>
