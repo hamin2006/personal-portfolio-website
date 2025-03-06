@@ -7,8 +7,9 @@ const Footer = () => {
     return (
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay:0.3, duration: 0.8}}>
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay:0.3, duration: 0.8}}
+        viewport={{ once: true }}>
         <hr className="foo"/>
       <footer className="footer">
         

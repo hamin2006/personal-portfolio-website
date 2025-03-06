@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useState, useEffect, useRef, useMemo} from "react";
+import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 import "../css/Home.css"
 import Footer from "../Components/Footer";
@@ -38,6 +39,11 @@ function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
   const [speed, setSpeed] = useState(100); // Typing/Deleting speed
+  const About = useRef(null);
+
+  const scrollDown = () => {
+    About.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   useEffect(() => {
     const typeTimeout = setTimeout(() => {
@@ -96,17 +102,60 @@ function Home() {
             <div className="cursor h-[30px] sm:h-[30px] md:h-[40px] lg:h-[50px]"></div>
           </motion.h2>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0}}
+          transition={{ delay: 1.45, duration: 0.5 }}
+          className="absolute bottom-10 flex justify-center w-[100vw] text-center"
+        >
+          <button
+            onClick={scrollDown}
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+          >
+            <span className="text-gray-700 text-opacity-50">Scroll to explore</span>
+            <ArrowDown color = "#374151" className="animate-bounce" />
+          </button>
+        </motion.div>
       </div>
 
-      <h2 className="about-header">About Me</h2>
-      <div className="about-me flex flex-col md:flex-row h-screen justify-center items-center gap-[10vw]">
-        <img className = "my-flick" src="/logo512.png" alt="Harsh" />
-        <p>helloooo</p>
-      </div>
-      <h2 className="about-header">Skills</h2>
+      <motion.h2 
+        ref = {About} 
+        className="about-header"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}>About Me</motion.h2>
+
+        <div className="about-me flex flex-col md:flex-row h-screen justify-center items-center gap-[10vw]">
+          <motion.img 
+          className = "my-flick" 
+          src="/logo512.png" 
+          alt="Harsh" 
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}/>
+          <motion.p
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}>helloooo</motion.p>
+        </div>
+      <motion.h2 
+      className="about-header"
+      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}>Skills</motion.h2>
       <div className="skills">
         
-        <div className="languages">
+        <motion.div 
+        className="languages"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        viewport={{ once: true }}>
           <h2 className="subheader">Languages</h2>
           <div className="languages-group relative flex-col grid grid-cols-3 md:flex md:flex-row items-center justify-center my-[10vh] gap-[4vw]">
             {languages.map((language, index) => (
@@ -119,10 +168,15 @@ function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         <div className="subgroup-one flex-col md:flex-row">
-          <div className="skills-group">
+          <motion.div 
+          className="skills-group"
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}>
             <h2 className="subheader">Web Development</h2>
             <div className="web-dev">
               {webDevFrameworks.map((webdev, index) => (
@@ -135,9 +189,14 @@ function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="ml skills-group">
+          <motion.div 
+          className="ml skills-group"
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}>
             <h2 className="subheader">Data Science/Machine Learning</h2>
             <div className="ml-items">
               {mlframeworks.map((ml, index) => (
@@ -150,10 +209,15 @@ function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
         <div className="subgroup-two flex-col md:flex-row">
-          <div className="tools skills-group">
+          <motion.div 
+          className="tools skills-group"
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}>
             <h2 className="subheader">Dev Tools</h2>
             <div className="ml-items">
               {tools.map((tool, index) => (
@@ -166,9 +230,14 @@ function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
-          <div className="testing skills-group">
+          <motion.div 
+          className="testing skills-group"
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: 50 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}>
             <h2 className="subheader">Testing</h2>
             <div className="web-dev">
               {testingframeworks.map((test, index) => (
@@ -181,7 +250,7 @@ function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
       </div>
