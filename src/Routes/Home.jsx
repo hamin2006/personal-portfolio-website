@@ -7,6 +7,7 @@ function Home() {
   document.title = "Harsh Amin | Home";
   const lines = useMemo(() => 
     [
+      " ",
       "Computer Science Student",
       "Hard Worker",
       "Software Developer",
