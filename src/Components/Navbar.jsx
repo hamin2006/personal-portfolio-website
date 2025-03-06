@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "../css/Navbar.css"
 import { X, Menu } from "lucide-react";
-import logo from "./files/logo-plain.png"
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
@@ -51,7 +50,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="logo"><img src = {logo} alt = "Logo" onClick = {sendHome} className="logo-img"></img></div>
+      <div className="logo"><img src = "/logo-plain.png" alt = "Logo" onClick = {sendHome} className="logo-img"></img></div>
       
       <ul className="nav-links hidden md:flex">
         <li onClick = {sendHome}>Home</li>
