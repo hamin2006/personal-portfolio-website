@@ -129,14 +129,27 @@ function Home() {
       </motion.h2>
 
         <div className="about-me flex flex-col md:flex-row h-[90vh] justify-center items-center gap-[10vw]">
-          <motion.img 
-          className = "my-flick w-[40%]" 
-          src="/logo512.png" 
-          alt="Harsh" 
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -50 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}/>
+          <motion.div
+            className="about-image md:w-[40%] flex justify-center items-center"
+            whileInView={{ opacity: 1, x: 0 }} 
+            initial={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            viewport={{ once: true }}>
+            
+            <motion.div
+              className=" w-[225px] h-[450px] md:w-[350px] md:h-[600px] rounded-full overflow-hidden border-4 border-white shadow-xl"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300}}
+              >
+              <img 
+              className = "my-flick w-full h-full object-cover" 
+              src="/harsh.png" 
+              alt="Harsh" 
+              />
+            </motion.div>
+          </motion.div>
+          
+          
 
           <motion.p
           className="about-text w-[80%] md:w-[40%] text-[#333] text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem]"
