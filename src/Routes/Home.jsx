@@ -137,7 +137,7 @@ function Home() {
             viewport={{ once: true }}>
             
             <motion.div
-              className="w-[200px] h-[350px] md:w-[350px] md:h-[600px] rounded-full overflow-hidden border-4 border-white shadow-[0px_10px_30px_rgba(255,255,255,0.5)] ring-4 ring-white/30 hover:ring-8 hover:ring-white/50 transition-all duration-300"
+              className="w-[200px] h-[350px] md:w-[350px] md:h-[600px] rounded-full overflow-hidden border-4 border-white shadow-[0px_10px_50px_rgba(225,225,225,0.7)] ring-4 ring-white/30 hover:ring-8 hover:ring-white/50 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
