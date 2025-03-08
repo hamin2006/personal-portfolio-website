@@ -142,7 +142,7 @@ function Home() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img 
-                className="w-full h-full object-cover shadow-lg" 
+                className="w-full h-full object-cover brightness-125 shadow-lg" 
                 src="/harsh.png" 
                 alt="Harsh" 
               />
