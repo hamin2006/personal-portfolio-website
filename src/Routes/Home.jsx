@@ -128,7 +128,7 @@ function Home() {
         viewport={{ once: true }}>About Me
       </motion.h2>
 
-        <div className="about-me flex flex-col md:flex-row h-[90vh] justify-center items-center gap-[10vw]">
+        <div className="about-me flex flex-col md:flex-row min-h-screen justify-center items-center gap-[10vw]">
           <motion.div
             className="about-image md:w-[40%] flex justify-center items-center"
             whileInView={{ opacity: 1, x: 0 }} 
@@ -137,16 +137,16 @@ function Home() {
             viewport={{ once: true }}>
             
             <motion.div
-  className="w-[225px] h-[450px] md:w-[350px] md:h-[600px] rounded-full overflow-hidden border-4 border-white shadow-[0px_10px_30px_rgba(255,255,255,0.5)] ring-4 ring-white/30 hover:ring-8 hover:ring-white/50 transition-all duration-300"
-  whileHover={{ scale: 1.05 }}
-  transition={{ type: "spring", stiffness: 300 }}
->
-  <img 
-    className="w-full h-full object-cover shadow-lg" 
-    src="/harsh.png" 
-    alt="Harsh" 
-  />
-</motion.div>
+              className="w-[200px] h-[350px] md:w-[350px] md:h-[600px] rounded-full overflow-hidden border-4 border-white shadow-[0px_10px_30px_rgba(255,255,255,0.5)] ring-4 ring-white/30 hover:ring-8 hover:ring-white/50 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img 
+                className="w-full h-full object-cover shadow-lg" 
+                src="/harsh.png" 
+                alt="Harsh" 
+              />
+            </motion.div>
 
           </motion.div>
           
