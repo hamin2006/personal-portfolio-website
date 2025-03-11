@@ -16,7 +16,7 @@ export default function ExperiencePage() {
       <div className="min-h-screen flex items-center justify-center pt-10">
         <div className="max-w-7xl">
           <motion.h1
-            className="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-800 dark:text-slate-100"
+            className="text-4xl md:text-5xl font-bold text-center mb-4 text-slate-100"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -34,13 +34,13 @@ export default function ExperiencePage() {
           </motion.p>
 
           <div className="flex justify-center mb-12">
-            <div className="inline-flex bg-slate-200 dark:bg-slate-800 p-1 rounded-xl">
+            <div className="inline-flex bg-slate-800 p-1 rounded-xl">
               <button
                 onClick={() => {document.title = "Harsh Amin | Experience"; setActiveTab("experience");}}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeTab === "experience"
-                    ? "bg-white dark:bg-slate-700 text-slate-800 dark:text-white shadow-sm"
-                    : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white"
+                    ? "bg-slate-700 text-white shadow-sm"
+                    : "text-slate-400 hover:text-white"
                 }`}
               >
                 <Briefcase className="w-4 h-4 mr-2" />
@@ -50,8 +50,8 @@ export default function ExperiencePage() {
                 onClick={() => {document.title = "Harsh Amin | Education"; setActiveTab("education");}}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeTab === "education"
-                    ? "bg-white dark:bg-slate-700 text-slate-800 dark:text-white shadow-sm"
-                    : "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white"
+                    ? "bg-slate-700 text-white shadow-sm"
+                    : "text-slate-400 hover:text-white"
                 }`}
               >
                 <GraduationCap className="w-4 h-4 mr-2" />
@@ -212,8 +212,8 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
         <motion.div
           className={`w-12 h-12 rounded-full flex items-center justify-center border-4 ${
             isLeft
-              ? "bg-blue-100 border-blue-500 dark:bg-blue-900 dark:border-blue-400"
-              : "bg-purple-100 border-purple-500 dark:bg-purple-900 dark:border-purple-400"
+              ? "bg-blue-900 border-blue-400"
+              : "bg-purple-900 border-purple-400"
           }`}
           initial={{ scale: 0 }}
           whileInView={{ scale: 1 }}
@@ -236,17 +236,17 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
         whileHover={{ y: -5 }}
         transition={{ type: "spring", stiffness: 300, damping: 15 }}
       >
-        <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
+        <div className="bg-slate-800 rounded-xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl">
           <div className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div>
-                <h3 className="text-xl font-bold text-slate-800 dark:text-white">{data.title}</h3>
+                <h3 className="text-xl font-bold text-white">{data.title}</h3>
                 <div className="flex items-center mt-1">
-                  <span className="text-slate-600 dark:text-slate-300 font-medium">{data.company}</span>
+                  <span className="text-slate-300 font-medium">{data.company}</span>
                 </div>
               </div>
               <div className="flex-shrink-0 ml-4">
-                <div className="w-16 h-16 rounded-md overflow-hidden bg-slate-100 dark:bg-slate-700 p-2 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-md overflow-hidden bg-slate-700 p-2 flex items-center justify-center">
                   <img
                     src={data.logo || "/placeholder.svg"}
                     alt={`${data.company} logo`}
@@ -256,15 +256,15 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
               </div>
             </div>
 
-            <div className="flex items-center text-sm text-slate-500 dark:text-slate-400 mb-4">
+            <div className="flex items-center text-sm text-slate-400 mb-4">
               <Calendar className="w-4 h-4 mr-1" />
               <span>{data.period}</span>
             </div>
 
-            <p className="text-slate-600 dark:text-slate-300 mb-4" dangerouslySetInnerHTML={{ "__html": data.description }}></p>
+            <p className="text-slate-300 mb-4" dangerouslySetInnerHTML={{ "__html": data.description }}></p>
 
             <div className="mb-4">
-              <h4 className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
+              <h4 className="text-sm font-semibold text-slate-200 mb-2">
                 {data.skills ? "Skills & Technologies" : "Courses"}
               </h4>
               <div className="flex flex-wrap gap-2">
@@ -273,8 +273,8 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
                     key={i}
                     className={`text-xs px-2.5 py-1 rounded-full ${
                       isLeft
-                        ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                        : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                        ? "bg-blue-900 text-blue-200"
+                        : "bg-purple-900 text-purple-200"
                     }`}
                   >
                     {skill}
@@ -285,8 +285,8 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
                     key={i}
                     className={`text-xs px-2.5 py-1 rounded-full ${
                       isLeft
-                        ? "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                        : "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200"
+                        ? "bg-blue-900 text-blue-200"
+                        : "bg-purple-900 text-purple-200"
                     }`}
                   >
                     {skill}
@@ -299,8 +299,8 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
               href={data.link}
               className={`inline-flex items-center text-sm font-medium ${
                 isLeft
-                  ? "text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                  : "text-purple-600 hover:text-purple-800 dark:text-purple-400 dark:hover:text-purple-300"
+                  ? "text-blue-400 hover:text-blue-300"
+                  : "text-purple-400 hover:text-purple-300"
               }`}
             >
               Learn more <ExternalLink className="w-3.5 h-3.5 ml-1" />
@@ -310,8 +310,8 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
           <div
             className={`h-1.5 ${
               isLeft
-                ? "bg-gradient-to-r from-blue-300 to-blue-600 dark:from-blue-600 dark:to-blue-400"
-                : "bg-gradient-to-r from-purple-300 to-purple-600 dark:from-purple-600 dark:to-purple-400"
+                ? "bg-gradient-to-r from-blue-600 to-blue-400"
+                : "bg-gradient-to-r from-purple-600 to-purple-400"
             }`}
           />
         </div>
