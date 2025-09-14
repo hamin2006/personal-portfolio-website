@@ -1,5 +1,5 @@
-import React from 'react';
-import '../css/ProjectCard.css';
+import React from "react";
+import "../css/ProjectCard.css";
 
 const ProjectCard = ({ title, description, image, link }) => {
   return (
@@ -11,7 +11,9 @@ const ProjectCard = ({ title, description, image, link }) => {
         <div className="project-card-back">
           <h3 className="project-title">{title}</h3>
           <p className="project-description">{description}</p>
-          <a href={link} className="project-link">View Project</a>
+          <a href={link} className="project-link">
+            View Project
+          </a>
         </div>
       </div>
     </div>

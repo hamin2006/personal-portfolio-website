@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import "../css/Navbar.css"
+import React, { useEffect, useState } from "react";
+import "../css/Navbar.css";
 import { X, Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -22,23 +22,23 @@ const Navbar = () => {
 
   const sendHome = () => {
     navigate("/");
-    window.scrollTo({top:0});
+    window.scrollTo({ top: 0 });
     setMenuOpen(false);
-  }
+  };
   const sendProjects = () => {
     navigate("/projects");
-    window.scrollTo({top:0});
+    window.scrollTo({ top: 0 });
     setMenuOpen(false);
-  }
+  };
   const sendExperience = () => {
     navigate("/experience");
-    window.scrollTo({top:0});
+    window.scrollTo({ top: 0 });
     setMenuOpen(false);
-  }
+  };
   const sendContact = () => {
     navigate("/contact");
     setMenuOpen(false);
-  }
+  };
 
   const sendResume = () => {
     const link = document.createElement("a");
@@ -46,21 +46,32 @@ const Navbar = () => {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.click();
-  }
+  };
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="logo"><img src = "/logo-plain.png" alt = "Logo" onClick = {sendHome} className="logo-img"></img></div>
-      
+      <div className="logo">
+        <img
+          src="/logo-plain.png"
+          alt="Logo"
+          onClick={sendHome}
+          className="logo-img"
+        ></img>
+      </div>
+
       <ul className="nav-links hidden md:flex">
-        <li onClick = {sendHome}>Home</li>
-        <li onClick = {sendResume}>Resume</li>
-        <li onClick = {sendProjects}>Projects</li>
-        <li onClick = {sendExperience}>Experience</li>
-        <li onClick = {sendContact}>Contact</li>
+        <li onClick={sendHome}>Home</li>
+        <li onClick={sendResume}>Resume</li>
+        <li onClick={sendProjects}>Projects</li>
+        <li onClick={sendExperience}>Experience</li>
+        <li onClick={sendContact}>Contact</li>
       </ul>
 
-      <ul className={`nav-links-mobile md:hidden flex flex-col items-center w-full ${menuOpen ? "block" : "hidden"}`}>
+      <ul
+        className={`nav-links-mobile md:hidden flex flex-col items-center w-full ${
+          menuOpen ? "block" : "hidden"
+        }`}
+      >
         <li onClick={sendHome}>Home</li>
         <li onClick={sendResume}>Resume</li>
         <li onClick={sendProjects}>Projects</li>
@@ -69,10 +80,10 @@ const Navbar = () => {
       </ul>
 
       <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <X /> : <Menu />}
+        {menuOpen ? <X /> : <Menu />}
       </button>
     </nav>
   );
-}
+};
 
 export default Navbar;
