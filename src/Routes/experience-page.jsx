@@ -73,12 +73,12 @@ function ExperienceTimeline() {
   const experiences = [
     {
       id: 1,
-      title: "Incoming Software Developer Intern",
+      title: "Software Developer Intern",
       company: "UBC X AWS Cloud Innovation Center",
       logo: "/cic.png",
       period: "2025 May - 2025 Dec",
       description:
-        "Excited to be working on projects revolved around AWS and Artificial Intelligence.",
+        "Built open-source GenAI apps for various sponsors, partaking in software development, consulting, and cloud solution architecture design.",
       skills: ["AWS", "AI"],
       link: "https://cic.ubc.ca/",
     },
