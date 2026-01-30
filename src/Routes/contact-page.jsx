@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { motion } from "framer-motion"
-import emailjs from '@emailjs/browser';
-import { Send, CheckCircle, Mail, Instagram, Phone } from "lucide-react"
-import Footer from "../Components/Footer"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { Send, CheckCircle, Mail, Instagram, Phone } from "lucide-react";
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
 export default function ContactPage() {
@@ -11,16 +11,15 @@ export default function ContactPage() {
     lastName: "",
     email: "",
     message: "",
-  })
-  const [formStatus, setFormStatus] = useState("idle") // idle, submitting, success
-  const [focusedField, setFocusedField] = useState(null)
-  document.title = "Harsh Amin | Contact Me"
-
+  });
+  const [formStatus, setFormStatus] = useState("idle"); // idle, submitting, success
+  const [focusedField, setFocusedField] = useState(null);
+  document.title = "Harsh Amin | Contact Me";
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormState((prev) => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormState((prev) => ({ ...prev, [name]: value }));
+  };
 
   // const handleSubmit = (e) => {
   //   e.preventDefault()
@@ -44,19 +43,23 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.init({publicKey:'Xz_OhX-aqHDPIsx-9', blockHeadless: true});
-    emailjs.send('service_tow07qb', 'template_2lncth4', {name: formState.firstName + " " + formState.lastName, email: formState.email, message: formState.message})
+    emailjs.init({ publicKey: "Xz_OhX-aqHDPIsx-9", blockHeadless: true });
+    emailjs
+      .send("service_tow07qb", "template_2lncth4", {
+        name: formState.firstName + " " + formState.lastName,
+        email: formState.email,
+        message: formState.message,
+      })
       .then(
         (response) => {
-          console.log('SUCCESS! ' + response.text);
-          setFormStatus("success")
+          console.log("SUCCESS! " + response.text);
+          setFormStatus("success");
         },
         (error) => {
           alert("Unable to send: " + error.text);
-          console.log('FAILED...', error.text);
+          console.log("FAILED...", error.text);
         },
       );
-    
   };
 
   return (
@@ -86,8 +89,13 @@ export default function ContactPage() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-slate-600 max-w-md"
             >
-              <p className="mb-4">I'm always open to new opportunities, collaborations, or just a friendly chat.</p>
-              <p className="mb-6">Fill out the form, and I'll get back to you as soon as possible!</p>
+              <p className="mb-4">
+                I'm always open to new opportunities, collaborations, or just a
+                friendly chat.
+              </p>
+              <p className="mb-6">
+                Fill out the form, and I'll get back to you as soon as possible!
+              </p>
 
               <div className="flex items-center space-x-4 mb-3">
                 <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
@@ -140,23 +148,41 @@ export default function ContactPage() {
                 >
                   <CheckCircle className="h-10 w-10 text-green-600" />
                 </motion.div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">Message Sent!</h2>
-                <p className="text-gray-600">Thank you for reaching out. I'll get back to you soon.</p>
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                  Message Sent!
+                </h2>
+                <p className="text-gray-600">
+                  Thank you for reaching out. I'll get back to you soon.
+                </p>
               </motion.div>
             ) : (
-              <motion.form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-xl p-8">
-                <h2 className="text-2xl font-bold text-gray-800 mb-6">Send a Message</h2>
+              <motion.form
+                onSubmit={handleSubmit}
+                className="bg-white rounded-2xl shadow-xl p-8"
+              >
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
+                  Send a Message
+                </h2>
 
                 <div className="grid grid-cols-2 gap-4 mb-4">
                   <div className="relative">
-                    <label htmlFor="firstName" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="firstName"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       First Name
                     </label>
                     <div className="mt-1 relative">
                       <motion.div
-                        animate={focusedField === "firstName" ? { scale: 1.03 } : { scale: 1 }}
+                        animate={
+                          focusedField === "firstName"
+                            ? { scale: 1.03 }
+                            : { scale: 1 }
+                        }
                         className="absolute inset-0 bg-purple-100 rounded-md -z-10"
-                        style={{ opacity: focusedField === "firstName" ? 0.5 : 0 }}
+                        style={{
+                          opacity: focusedField === "firstName" ? 0.5 : 0,
+                        }}
                       />
                       <input
                         id="firstName"
@@ -172,14 +198,23 @@ export default function ContactPage() {
                   </div>
 
                   <div className="relative">
-                    <label htmlFor="lastName" className="text-sm font-medium text-gray-700">
+                    <label
+                      htmlFor="lastName"
+                      className="text-sm font-medium text-gray-700"
+                    >
                       Last Name
                     </label>
                     <div className="mt-1 relative">
                       <motion.div
-                        animate={focusedField === "lastName" ? { scale: 1.03 } : { scale: 1 }}
+                        animate={
+                          focusedField === "lastName"
+                            ? { scale: 1.03 }
+                            : { scale: 1 }
+                        }
                         className="absolute inset-0 bg-purple-100 rounded-md -z-10"
-                        style={{ opacity: focusedField === "lastName" ? 0.5 : 0 }}
+                        style={{
+                          opacity: focusedField === "lastName" ? 0.5 : 0,
+                        }}
                       />
                       <input
                         id="lastName"
@@ -196,12 +231,19 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mb-4">
-                  <label htmlFor="email" className="text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="email"
+                    className="text-sm font-medium text-gray-700"
+                  >
                     Email
                   </label>
                   <div className="mt-1 relative">
                     <motion.div
-                      animate={focusedField === "email" ? { scale: 1.03 } : { scale: 1 }}
+                      animate={
+                        focusedField === "email"
+                          ? { scale: 1.03 }
+                          : { scale: 1 }
+                      }
                       className="absolute inset-0 bg-purple-100 rounded-md -z-10"
                       style={{ opacity: focusedField === "email" ? 0.5 : 0 }}
                     />
@@ -220,12 +262,19 @@ export default function ContactPage() {
                 </div>
 
                 <div className="mb-6">
-                  <label htmlFor="message" className="text-sm font-medium text-gray-700">
+                  <label
+                    htmlFor="message"
+                    className="text-sm font-medium text-gray-700"
+                  >
                     Message
                   </label>
                   <div className="mt-1 relative">
                     <motion.div
-                      animate={focusedField === "message" ? { scale: 1.03 } : { scale: 1 }}
+                      animate={
+                        focusedField === "message"
+                          ? { scale: 1.03 }
+                          : { scale: 1 }
+                      }
                       className="absolute inset-0 bg-purple-100 rounded-md -z-10"
                       style={{ opacity: focusedField === "message" ? 0.5 : 0 }}
                     />
@@ -243,7 +292,10 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                <motion.div
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                >
                   <button
                     type="submit"
                     disabled={formStatus === "submitting"}
@@ -285,10 +337,8 @@ export default function ContactPage() {
             )}
           </motion.div>
         </motion.div>
-        
       </div>
       <Footer />
     </div>
-  )
+  );
 }
-

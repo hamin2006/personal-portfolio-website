@@ -1,17 +1,17 @@
-import { useState, useRef, useEffect } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { Calendar, Briefcase, GraduationCap, ExternalLink } from "lucide-react"
-import Footer from "../Components/Footer"
-import Navbar from "../Components/Navbar"
+import { useState, useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Calendar, Briefcase, GraduationCap, ExternalLink } from "lucide-react";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 export default function ExperiencePage() {
   const [activeTab, setActiveTab] = useState("experience");
   useEffect(() => {
     document.title = "Harsh Amin | Experience";
   }, []);
-  
+
   return (
-    <div className = "flex flex-col w-full bg-gradient-to-br from-slate-950">
+    <div className="flex flex-col w-full bg-gradient-to-br from-slate-950">
       <Navbar />
       <div className="min-h-screen flex items-center justify-center pt-10">
         <div className="max-w-7xl">
@@ -36,7 +36,10 @@ export default function ExperiencePage() {
           <div className="flex justify-center mb-12">
             <div className="inline-flex bg-slate-800 p-1 rounded-xl">
               <button
-                onClick={() => {document.title = "Harsh Amin | Experience"; setActiveTab("experience");}}
+                onClick={() => {
+                  document.title = "Harsh Amin | Experience";
+                  setActiveTab("experience");
+                }}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeTab === "experience"
                     ? "bg-slate-700 text-white shadow-sm"
@@ -47,7 +50,10 @@ export default function ExperiencePage() {
                 Experience
               </button>
               <button
-                onClick={() => {document.title = "Harsh Amin | Education"; setActiveTab("education");}}
+                onClick={() => {
+                  document.title = "Harsh Amin | Education";
+                  setActiveTab("education");
+                }}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   activeTab === "education"
                     ? "bg-slate-700 text-white shadow-sm"
@@ -60,13 +66,16 @@ export default function ExperiencePage() {
             </div>
           </div>
 
-          {activeTab === "experience" ? <ExperienceTimeline /> : <EducationTimeline />}
+          {activeTab === "experience" ? (
+            <ExperienceTimeline />
+          ) : (
+            <EducationTimeline />
+          )}
         </div>
-        
       </div>
       <Footer />
     </div>
-  )
+  );
 }
 
 function ExperienceTimeline() {
@@ -90,7 +99,14 @@ function ExperienceTimeline() {
       period: "2024 Sep - Present",
       description:
         "As a software developer at UBC Launch Pad, I collaborate with a team in an agile environment to develop the Forum AI project. My contributions include designing parts of the Retrieval Augmented Generation model, developing FastAPI endpoints, setting up a PostgreSQL database with migration scripts, and implementing Selenium-based automation.",
-      skills: ["React", "TypeScript", "TailwindCSS", "FastAPI", "PostgreSQL", "RAG"],
+      skills: [
+        "React",
+        "TypeScript",
+        "TailwindCSS",
+        "FastAPI",
+        "PostgreSQL",
+        "RAG",
+      ],
       link: "https://www.ubclaunchpad.com/",
     },
     {
@@ -102,7 +118,6 @@ function ExperienceTimeline() {
       description:
         "As a Computer Science TA, I assessed student submissions by implementing JUnit test cases and explained complex topics like Linked Lists, OOP, and Sorting algorithms through in-class presentations. I also designed assignments on UI development and OOP, enhancing both my communication skills and students' programming abilities.",
       skills: ["Communication", "Leadership", "JUnit", "UI Development"],
-      
     },
     {
       id: 4,
@@ -113,9 +128,9 @@ function ExperienceTimeline() {
       description:
         "As a math instructor, I taught high school math (grades 9-12) using the Mathnasium Learning Method, improving my communication and leadership skills through student interactions and coordination with fellow instructors.",
       skills: ["Communication", "Leadership", "Teamwork", "Problem Solving"],
-      link: "https://www.mathnasium.com/ca/"
+      link: "https://www.mathnasium.com/ca/",
     },
-  ]
+  ];
 
   return (
     <div className="relative w-full">
@@ -135,7 +150,7 @@ function ExperienceTimeline() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function EducationTimeline() {
@@ -146,8 +161,16 @@ function EducationTimeline() {
       school: "University of British Columbia",
       logo: "/ubc.png",
       period: "2023 - 2027",
-      description:"<b>GPA:</b> 89% <br/> <b>Awards:</b> Trek Academic Excellence Scholarship <br/> <b>Extracurriculars:</b> UBC Launch Pad Design Team, Intramural Basketball, Weight Lifting and Entrepreneurship Club",
-      courses: ["Data Structures", "Web Development", "Software Engineering", "Discrete Mathematics", "Computer Systems", "Machine Learning"],
+      description:
+        "<b>GPA:</b> 89% <br/> <b>Awards:</b> Trek Academic Excellence Scholarship <br/> <b>Extracurriculars:</b> UBC Launch Pad Design Team, Intramural Basketball, Weight Lifting and Entrepreneurship Club",
+      courses: [
+        "Data Structures",
+        "Web Development",
+        "Software Engineering",
+        "Discrete Mathematics",
+        "Computer Systems",
+        "Machine Learning",
+      ],
       link: "https://www.ubc.ca/",
     },
     {
@@ -158,10 +181,13 @@ function EducationTimeline() {
       period: "May 2024 - Aug 2024",
       description:
         "Completed two Udemy courses. One on Full Stack Web Development, learning how to build responsive websites and web applications. And another on Machine Learning, diving into the world of AI and data science using extensive frameworks and libraries in Python and R.",
-      courses: ["The Complete 2024 Web Development Bootcamp", "Machine Learning A-Z"],
+      courses: [
+        "The Complete 2024 Web Development Bootcamp",
+        "Machine Learning A-Z",
+      ],
       link: "#",
     },
-  ]
+  ];
 
   return (
     <div className="relative w-full">
@@ -189,18 +215,22 @@ function EducationTimeline() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function TimelineCard({ data, index, isLeft, icon, type }) {
-  const cardRef = useRef(null)
+  const cardRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "end start"],
-  })
+  });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0])
-  const x = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [isLeft ? -50 : 50, 0, 0, isLeft ? -50 : 50])
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.9, 1], [0, 1, 1, 0]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.9, 1],
+    [isLeft ? -50 : 50, 0, 0, isLeft ? -50 : 50],
+  );
 
   return (
     <div
@@ -242,7 +272,9 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
               <div>
                 <h3 className="text-xl font-bold text-white">{data.title}</h3>
                 <div className="flex items-center mt-1">
-                  <span className="text-slate-300 font-medium">{data.company}</span>
+                  <span className="text-slate-300 font-medium">
+                    {data.company}
+                  </span>
                 </div>
               </div>
               <div className="flex-shrink-0 ml-4">
@@ -261,37 +293,41 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
               <span>{data.period}</span>
             </div>
 
-            <p className="text-slate-300 mb-4" dangerouslySetInnerHTML={{ "__html": data.description }}></p>
+            <p
+              className="text-slate-300 mb-4"
+              dangerouslySetInnerHTML={{ __html: data.description }}
+            ></p>
 
             <div className="mb-4">
               <h4 className="text-sm font-semibold text-slate-200 mb-2">
                 {data.skills ? "Skills & Technologies" : "Courses"}
               </h4>
               <div className="flex flex-wrap gap-2">
-                {data.skills ? data.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className={`text-xs px-2.5 py-1 rounded-full ${
-                      isLeft
-                        ? "bg-blue-900 text-blue-200"
-                        : "bg-purple-900 text-purple-200"
-                    }`}
-                  >
-                    {skill}
-                  </span>
-                )) : 
-                data.courses.map((skill, i) => (
-                  <span
-                    key={i}
-                    className={`text-xs px-2.5 py-1 rounded-full ${
-                      isLeft
-                        ? "bg-blue-900 text-blue-200"
-                        : "bg-purple-900 text-purple-200"
-                    }`}
-                  >
-                    {skill}
-                  </span>
-                ))}
+                {data.skills
+                  ? data.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className={`text-xs px-2.5 py-1 rounded-full ${
+                          isLeft
+                            ? "bg-blue-900 text-blue-200"
+                            : "bg-purple-900 text-purple-200"
+                        }`}
+                      >
+                        {skill}
+                      </span>
+                    ))
+                  : data.courses.map((skill, i) => (
+                      <span
+                        key={i}
+                        className={`text-xs px-2.5 py-1 rounded-full ${
+                          isLeft
+                            ? "bg-blue-900 text-blue-200"
+                            : "bg-purple-900 text-purple-200"
+                        }`}
+                      >
+                        {skill}
+                      </span>
+                    ))}
               </div>
             </div>
 
@@ -317,6 +353,5 @@ function TimelineCard({ data, index, isLeft, icon, type }) {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
-
