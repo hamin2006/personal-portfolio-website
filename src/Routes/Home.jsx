@@ -11,7 +11,7 @@ function Home() {
       " ",
       "Software Developer",
       "Machine Learning Engineer",
-      "Solutions Architect",
+      "Cloud Solutions Architect",
       "Innovative Problem Solver",
       "Vibe Coder",
     ],
