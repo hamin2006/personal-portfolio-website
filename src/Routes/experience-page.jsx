@@ -82,6 +82,17 @@ function ExperienceTimeline() {
   const experiences = [
     {
       id: 1,
+      title: "Software Development Engineer Intern",
+      company: "Amazon",
+      logo: "/amazon.png",
+      period: "2026 May - 2026 Aug",
+      description:
+        "Incoming Summer 2026. Working in the AI Center of Excellence under Dr. Rebecca Steiner.",
+      skills: ["AWS"],
+      link: "https://aws.amazon.com/blogs/machine-learning/establishing-an-ai-ml-center-of-excellence/",
+    },
+    {
+      id: 2,
       title: "Software Developer Intern",
       company: "UBC X AWS Cloud Innovation Center",
       logo: "/cic.png",
@@ -92,7 +103,7 @@ function ExperienceTimeline() {
       link: "https://cic.ubc.ca/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Software Developer",
       company: "UBC Launch Pad",
       logo: "/launchpad.jpeg",
@@ -110,7 +121,7 @@ function ExperienceTimeline() {
       link: "https://www.ubclaunchpad.com/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Computer Science TA",
       company: "Henry Wise Wood High School",
       logo: "/hww.jpg",
@@ -120,7 +131,7 @@ function ExperienceTimeline() {
       skills: ["Communication", "Leadership", "JUnit", "UI Development"],
     },
     {
-      id: 4,
+      id: 5,
       title: "Math Instructor",
       company: "Mathnasium",
       logo: "/mathnasium.jpeg",
