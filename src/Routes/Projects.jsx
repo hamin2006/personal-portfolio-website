@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
+import { ChevronLeft, ChevronRight, ChevronDown, ExternalLink, Github } from "lucide-react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
@@ -371,15 +371,35 @@ export default function Projects() {
 }
 
 function ProjectCard({ project, isActive }) {
+  const scrollRef = useRef(null);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      if (el.scrollTop > 10) setHasScrolled(true);
+    };
+    el.addEventListener("scroll", handleScroll);
+    return () => el.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setHasScrolled(false);
+    if (scrollRef.current) scrollRef.current.scrollTop = 0;
+  }, [project.id]);
+
   return (
-    <motion.div
-      className="bg-gray-800/50 overflow-y-auto backdrop-blur-lg rounded-xl overflow-hidden h-full shadow-2xl"
-      style={{
-        boxShadow: `0 10px 30px -5px ${project.color}40, 0 0 5px ${project.color}20`,
-        background: `linear-gradient(135deg, #1f2937 0%, #111827 100%)`,
-      }}
-      layoutId={`project-card-${project.id}`}
-    >
+    <div className="relative h-full">
+      <motion.div
+        ref={scrollRef}
+        className="bg-gray-800/50 overflow-y-auto backdrop-blur-lg rounded-xl overflow-hidden h-full shadow-2xl"
+        style={{
+          boxShadow: `0 10px 30px -5px ${project.color}40, 0 0 5px ${project.color}20`,
+          background: `linear-gradient(135deg, #1f2937 0%, #111827 100%)`,
+        }}
+        layoutId={`project-card-${project.id}`}
+      >
       <div className="grid grid-cols-1 md:grid-cols-2 h-full">
         <motion.div
           className="relative"
@@ -492,5 +512,29 @@ function ProjectCard({ project, isActive }) {
         </div>
       </div>
     </motion.div>
+
+    {/* Scroll hint arrow — mobile only, disappears once user scrolls */}
+    <AnimatePresence>
+      {!hasScrolled && (
+        <motion.div
+          className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none flex flex-col items-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <motion.div
+            animate={{ y: [0, 7, 0] }}
+            transition={{ repeat: Infinity, duration: 1.1, ease: "easeInOut" }}
+          >
+            <ChevronDown
+              className="w-7 h-7 drop-shadow-lg"
+              style={{ color: project.color }}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
   );
 }

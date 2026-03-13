@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../css/Navbar.css";
 import { X, Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -67,17 +68,24 @@ const Navbar = () => {
         <li onClick={sendContact}>Contact</li>
       </ul>
 
-      <ul
-        className={`nav-links-mobile md:hidden flex flex-col items-center w-full ${
-          menuOpen ? "block" : "hidden"
-        }`}
-      >
-        <li onClick={sendHome}>Home</li>
-        <li onClick={sendResume}>Resume</li>
-        <li onClick={sendProjects}>Projects</li>
-        <li onClick={sendExperience}>Experience</li>
-        <li onClick={sendContact}>Contact</li>
-      </ul>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.ul
+            className="nav-links-mobile md:hidden flex flex-col items-center w-full"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            style={{ overflow: "hidden" }}
+          >
+            <li onClick={sendHome}>Home</li>
+            <li onClick={sendResume}>Resume</li>
+            <li onClick={sendProjects}>Projects</li>
+            <li onClick={sendExperience}>Experience</li>
+            <li onClick={sendContact}>Contact</li>
+          </motion.ul>
+        )}
+      </AnimatePresence>
 
       <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <X /> : <Menu />}
