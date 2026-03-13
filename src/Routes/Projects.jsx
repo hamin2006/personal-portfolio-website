@@ -1,6 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ChevronDown, ExternalLink, Github } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronDown,
+  ExternalLink,
+  Github,
+} from "lucide-react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 
@@ -400,141 +406,145 @@ function ProjectCard({ project, isActive }) {
         }}
         layoutId={`project-card-${project.id}`}
       >
-      <div className="grid grid-cols-1 md:grid-cols-2 h-full">
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
           <motion.div
-            className="absolute inset-0 bg-gradient-to-br"
-            style={{
-              background: `linear-gradient(135deg, ${project.color}20 0%, transparent 100%)`,
-              mixBlendMode: "overlay",
-            }}
-          />
-          <motion.img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover"
-            initial={{ scale: 1.2 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
-        </motion.div>
-
-        <div className="p-6 flex flex-col justify-between">
-          <div>
+            className="relative"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             <motion.div
-              className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+              className="absolute inset-0 bg-gradient-to-br"
               style={{
-                backgroundColor: `${project.color}30`,
-                color: project.color,
+                background: `linear-gradient(135deg, ${project.color}20 0%, transparent 100%)`,
+                mixBlendMode: "overlay",
               }}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Featured Project
-            </motion.div>
+            />
+            <motion.img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-full object-cover"
+              initial={{ scale: 1.2 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent" />
+          </motion.div>
 
-            <motion.h2
-              className="text-3xl text-white font-bold mb-3"
+          <div className="p-6 flex flex-col justify-between">
+            <div>
+              <motion.div
+                className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4"
+                style={{
+                  backgroundColor: `${project.color}30`,
+                  color: project.color,
+                }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                Featured Project
+              </motion.div>
+
+              <motion.h2
+                className="text-3xl text-white font-bold mb-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                {project.title}
+              </motion.h2>
+
+              <motion.p
+                className="text-gray-300 mb-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+              >
+                {project.description}
+              </motion.p>
+
+              <motion.div
+                className="flex flex-wrap gap-2 mb-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+              >
+                {project.tags.map((tag, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-gray-700/50 rounded-md text-s"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </motion.div>
+            </div>
+
+            <motion.div
+              className="flex gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.7 }}
             >
-              {project.title}
-            </motion.h2>
+              <motion.a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Github className="w-4 h-4" />
+                <span>Code</span>
+              </motion.a>
 
-            <motion.p
-              className="text-gray-300 mb-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            >
-              {project.description}
-            </motion.p>
-
-            <motion.div
-              className="flex flex-wrap gap-2 mb-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-            >
-              {project.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 bg-gray-700/50 rounded-md text-s"
-                >
-                  {tag}
-                </span>
-              ))}
+              <motion.a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg"
+                style={{ backgroundColor: `${project.color}30` }}
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: `${project.color}50`,
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ExternalLink className="w-4 h-4" />
+                <span>Live Demo</span>
+              </motion.a>
             </motion.div>
           </div>
-
-          <motion.div
-            className="flex gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-          >
-            <motion.a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Github className="w-4 h-4" />
-              <span>Code</span>
-            </motion.a>
-
-            <motion.a
-              href={project.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-lg"
-              style={{ backgroundColor: `${project.color}30` }}
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: `${project.color}50`,
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ExternalLink className="w-4 h-4" />
-              <span>Live Demo</span>
-            </motion.a>
-          </motion.div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
 
-    {/* Scroll hint arrow — mobile only, disappears once user scrolls */}
-    <AnimatePresence>
-      {!hasScrolled && (
-        <motion.div
-          className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none flex flex-col items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+      {/* Scroll hint arrow — mobile only, disappears once user scrolls */}
+      <AnimatePresence>
+        {!hasScrolled && (
           <motion.div
-            animate={{ y: [0, 7, 0] }}
-            transition={{ repeat: Infinity, duration: 1.1, ease: "easeInOut" }}
+            className="md:hidden absolute bottom-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none flex flex-col items-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
           >
-            <ChevronDown
-              className="w-7 h-7 drop-shadow-lg"
-              style={{ color: project.color }}
-            />
+            <motion.div
+              animate={{ y: [0, 7, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 1.1,
+                ease: "easeInOut",
+              }}
+            >
+              <ChevronDown
+                className="w-7 h-7 drop-shadow-lg"
+                style={{ color: project.color }}
+              />
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
