@@ -87,7 +87,7 @@ function ExperienceTimeline() {
       logo: "/amazon.png",
       period: "2026 May - 2026 Aug",
       description:
-        "Incoming Summer 2026. Working in the AI Center of Excellence under Dr. Rebecca Steiner.",
+        "Incoming Summer 2026. Working in the AI Center of Excellence.",
       skills: ["AWS"],
       link: "https://aws.amazon.com/blogs/machine-learning/establishing-an-ai-ml-center-of-excellence/",
     },
