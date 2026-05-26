@@ -406,7 +406,7 @@ function Experience() {
   );
 
   const mathBackground = (
-    <img src="/math-background.png" alt="Math symbols" className="img" />
+    <img src="/math-background.png" alt="Math symbols " className="img" />
   );
 
   const descLP = `UBC Launch Pad is the leading Software Engineering design team at the University of British Columbia. As a software developer I collaborate with
