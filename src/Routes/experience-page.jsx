@@ -80,17 +80,17 @@ export default function ExperiencePage() {
 
 function ExperienceTimeline() {
   const experiences = [
-    {
-      id: 1,
-      title: "Software Development Engineer Intern",
-      company: "Amazon",
-      logo: "/amazon.png",
-      period: "2026 May - 2026 Aug",
-      description:
-        "Incoming Summer 2026. Working in the AI Center of Excellence.",
-      skills: ["AWS"],
-      link: "https://aws.amazon.com/blogs/machine-learning/establishing-an-ai-ml-center-of-excellence/",
-    },
+      {
+        id: 1,
+        title: "ML Software Development Engineer Intern",
+        company: "Amazon",
+        logo: "/amazon.png",
+        period: "2026 May - 2026 Aug",
+        description:
+          "Summer 2026. Working in the AI Center of Excellence.",
+        skills: ["AWS"],
+        link: "https://aws.amazon.com/blogs/machine-learning/establishing-an-ai-ml-center-of-excellence/",
+      },
     {
       id: 2,
       title: "Software Developer Intern",
@@ -102,45 +102,83 @@ function ExperienceTimeline() {
       skills: ["AWS", "AI"],
       link: "https://cic.ubc.ca/",
     },
-    {
-      id: 3,
-      title: "Software Developer",
-      company: "UBC Launch Pad",
-      logo: "/launchpad.jpeg",
-      period: "2024 Sep - Present",
-      description:
-        "As a software developer at UBC Launch Pad, I collaborate with a team in an agile environment to develop the Forum AI project. My contributions include designing parts of the Retrieval Augmented Generation model, developing FastAPI endpoints, setting up a PostgreSQL database with migration scripts, and implementing Selenium-based automation.",
-      skills: [
-        "React",
-        "TypeScript",
-        "TailwindCSS",
-        "FastAPI",
-        "PostgreSQL",
-        "RAG",
-      ],
-      link: "https://www.ubclaunchpad.com/",
-    },
-    {
-      id: 4,
-      title: "Computer Science TA",
-      company: "Henry Wise Wood High School",
-      logo: "/hww.jpg",
-      period: "Jan 2023 - Jun 2023",
-      description:
-        "As a Computer Science TA, I assessed student submissions by implementing JUnit test cases and explained complex topics like Linked Lists, OOP, and Sorting algorithms through in-class presentations. I also designed assignments on UI development and OOP, enhancing both my communication skills and students' programming abilities.",
-      skills: ["Communication", "Leadership", "JUnit", "UI Development"],
-    },
-    {
-      id: 5,
-      title: "Math Instructor",
-      company: "Mathnasium",
-      logo: "/mathnasium.jpeg",
-      period: "Sep 2022 - May 2023",
-      description:
-        "As a math instructor, I taught high school math (grades 9-12) using the Mathnasium Learning Method, improving my communication and leadership skills through student interactions and coordination with fellow instructors.",
-      skills: ["Communication", "Leadership", "Teamwork", "Problem Solving"],
-      link: "https://www.mathnasium.com/ca/",
-    },
+      {
+        id: 3,
+        title: "Co-President",
+        company: "UBC Launch Pad",
+        logo: "/launchpad.jpeg",
+        period: "2026 Jan - Present",
+        description:
+          "Currently serving as Co-President of UBC Launch Pad, the leading Software Engineering design team at UBC. Previously served as Technical Software Team Lead on the Forum AI project, and started as a Software Developer on the team.",
+        skills: [
+          "Leadership",
+          "Project Management",
+          "React",
+          "TypeScript",
+          "FastAPI",
+          "PostgreSQL",
+          "RAG",
+        ],
+        link: "https://www.ubclaunchpad.com/",
+      },
+      {
+        id: 4,
+        title: "Technical Software Team Lead",
+        company: "UBC Launch Pad",
+        logo: "/launchpad.jpeg",
+        period: "2025 Jan - Present",
+        description:
+          "Co-lead a 15+ member team of developers and designers on the Forum AI project, arranging weekly syncs and managing tickets over 8 months. Migrated to FastAPI endpoints with trigger-based embedding retrieval from a PGVectordatabase, resulting in a 27% reduction in API response time. Led the migration to the Deno runtime, achieving 20%+ improvement in execution speed within Docker environments.",
+        skills: [
+          "React",
+          "TypeScript",
+          "FastAPI",
+          "Deno",
+          "PostgreSQL",
+          "Docker",
+          "RAG",
+        ],
+        link: "https://www.ubclaunchpad.com/",
+      },
+      {
+        id: 5,
+        title: "Software Developer",
+        company: "UBC Launch Pad",
+        logo: "/launchpad.jpeg",
+        period: "2024 Sep - 2025 Jan",
+        description:
+          "As a software developer at UBC Launch Pad, I collaborated with a team in an agile environment to develop the Forum AI project. My contributions included designing parts of the Retrieval Augmented Generation model (chunking engine and vectorization), developing FastAPI endpoints, setting up a PostgreSQL database with migration scripts, and implementing Selenium-based automation.",
+        skills: [
+          "React",
+          "TypeScript",
+          "TailwindCSS",
+          "FastAPI",
+          "PostgreSQL",
+          "RAG",
+        ],
+        link: "https://www.ubclaunchpad.com/",
+      },
+      {
+        id: 6,
+        title: "Computer Science TA",
+        company: "Henry Wise Wood High School",
+        logo: "/hww.jpg",
+        period: "Jan 2023 - Jun 2023",
+        description:
+          "As a Computer Science TA, I assessed student submissions by implementing JUnit test cases and explained complex topics like Linked Lists, OOP, and Sorting algorithms through in-class presentations. I also designed assignments on UI development and OOP, enhancing both my communication skills and students' programming abilities.",
+        skills: ["Communication", "Leadership", "JUnit", "UI Development"],
+      },
+      {
+        id: 7,
+        title: "Math Instructor",
+        company: "Mathnasium",
+        logo: "/mathnasium.jpeg",
+        period: "Sep 2022 - May 2023",
+        description:
+          "As a math instructor, I taught high school math (grades 9-12) using the Mathnasium Learning Method, improving my communication and leadership skills through student interactions and coordination with fellow instructors.",
+        skills: ["Communication", "Leadership", "Teamwork", "Problem Solving"],
+        link: "https://www.mathnasium.com/ca/",
+      },
   ];
 
   return (
