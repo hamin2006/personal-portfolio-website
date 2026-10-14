@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
+import {
+  SiPytorch,
+  SiHuggingface,
+  SiLangchain,
+  SiDatabricks,
+  SiMlflow,
+} from "react-icons/si";
 import "../css/Home.css";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
@@ -9,11 +16,11 @@ function Home() {
   const lines = useMemo(
     () => [
       " ",
-      "Software Developer",
       "Machine Learning Engineer",
+      "AI Engineer",
+      "Software Developer",
       "Cloud Solutions Architect",
       "Innovative Problem Solver",
-      "Vibe Coder",
     ],
     [],
   );
@@ -38,16 +45,17 @@ function Home() {
     "Flask",
     "FastAPI",
   ];
+  // Icon entries use react-icons; the rest load /skillsimgs/<name>.png
   const mlframeworks = [
-    "Pandas",
-    "NumPy",
-    "Matplotlib",
-    "Scikit-learn",
-    "TensorFlow",
-    "dplyr",
-    "ggplot2",
-    "OpenCV",
-    "MediaPipe",
+    { name: "PyTorch", Icon: SiPytorch, color: "#EE4C2C" },
+    { name: "Hugging Face", Icon: SiHuggingface, color: "#FF9D00" },
+    { name: "LangChain", Icon: SiLangchain, color: "#1C3C3C" },
+    { name: "Databricks", Icon: SiDatabricks, color: "#FF3621" },
+    { name: "MLflow", Icon: SiMlflow, color: "#0194E2" },
+    { name: "Scikit-learn" },
+    { name: "Pandas" },
+    { name: "NumPy" },
+    { name: "OpenCV" },
   ];
   const testingframeworks = [
     "JUnit",
@@ -187,28 +195,25 @@ function Home() {
         </motion.div>
 
         <motion.p
-          className="about-text w-[80%] md:w-[40%] text-[#333] text-[0.6rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem]"
+          className="about-text w-[85%] md:w-[40%] text-[#2b2b2b] text-[0.95rem] lg:text-[1.05rem] leading-relaxed"
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: 50 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           viewport={{ once: true }}
         >
-          With a strong foundation in computer science and mathematics, I am
-          driven by a passion for solving complex problems and building
-          impactful software solutions. Currently pursuing my Bachelor's in
-          Computer Science at the University of British Columbia, My variety of
-          extracurriculars, coupled with my academic excellence, allow me to
-          enjoy and thrive in fast-paced, collaborative environments where
-          innovation meets real-world application.
+          I'm a Computer Science and Mathematics student at the University of
+          British Columbia focused on machine learning and AI systems. I like
+          building things that make it all the way to production, from the model
+          and the data pipeline to the cloud infrastructure it runs on.
           <br />
           <br />
-          From developing AI-powered applications to optimizing cloud-based
-          systems, I enjoy tackling challenges that push my technical and
-          analytical skills to new heights. My experience spans through
-          full-stack development, cloud development, and machine learning, with
-          a keen interest in leveraging technology to drive efficiency and
-          sustainability. Particularly I'm passionate about working on projects
-          that have a tangible impact on people and society.
+          This past summer I was a Machine Learning Engineer Intern on Amazon's
+          AI Center of Excellence, where I built evaluation tooling for
+          production AI agents and co-authored SEGRA, a paper on
+          experience-guided agents for graph question answering. Before that I
+          built open-source GenAI applications at the UBC Cloud Innovation
+          Centre with AWS, and today I lead UBC Launch Pad, UBC's largest
+          student software engineering team.
           <br />
           <br />
           Outside of Computer Science I love to play basketball, hockey, lift
@@ -283,18 +288,22 @@ function Home() {
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="subheader">Data Science/Machine Learning</h2>
+            <h2 className="subheader">Machine Learning &amp; AI</h2>
             <div className="ml-items">
-              {mlframeworks.map((ml, index) => (
-                <div key={index}>
-                  <div className="skills-card" style={{}}>
-                    <img
-                      src={"/skillsimgs/" + ml + ".png"}
-                      alt={ml}
-                      className="skills-image"
-                    />
+              {mlframeworks.map(({ name, Icon, color }) => (
+                <div key={name}>
+                  <div className="skills-card">
+                    {Icon ? (
+                      <Icon size={38} color={color} aria-label={name} />
+                    ) : (
+                      <img
+                        src={"/skillsimgs/" + name + ".png"}
+                        alt={name}
+                        className="skills-image"
+                      />
+                    )}
                   </div>
-                  <p className="skills-name">{ml}</p>
+                  <p className="skills-name">{name}</p>
                 </div>
               ))}
             </div>

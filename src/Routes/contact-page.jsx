@@ -63,7 +63,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-[100vh] bg-gradient-to-br from-indigo-50">
+    <div className="flex flex-col min-h-[100vh] bg-gradient-to-br from-amber-50">
       <Navbar />
       <div className="flex flex-col flex-grow md:flex-row ">
         {/* Animated Illustration Side */}
@@ -78,7 +78,7 @@ export default function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 mb-6"
+              className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-700 to-yellow-500 mb-6"
             >
               Let's Connect
             </motion.div>
@@ -98,22 +98,22 @@ export default function ContactPage() {
               </p>
 
               <div className="flex items-center space-x-4 mb-3">
-                <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                  <Mail className="h-5 w-5 text-purple-600" />
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                  <Mail className="h-5 w-5 text-amber-700" />
                 </div>
                 <span>aminharsh317@gmail.com</span>
               </div>
 
               <div className="flex items-center space-x-4 mb-3">
-                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center">
-                  <Phone className="h-5 w-5 text-blue-600" />
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                  <Phone className="h-5 w-5 text-amber-700" />
                 </div>
                 <span>(587)-664-9195</span>
               </div>
 
               <div className="flex items-center space-x-4 mb-3">
-                <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center">
-                  <Instagram className="h-5 w-5 text-pink-600" />
+                <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center">
+                  <Instagram className="h-5 w-5 text-amber-700" />
                 </div>
                 <span>@aminharsh317</span>
               </div>
@@ -179,7 +179,7 @@ export default function ContactPage() {
                             ? { scale: 1.03 }
                             : { scale: 1 }
                         }
-                        className="absolute inset-0 bg-purple-100 rounded-md -z-10"
+                        className="absolute inset-0 bg-amber-100 rounded-md -z-10"
                         style={{
                           opacity: focusedField === "firstName" ? 0.5 : 0,
                         }}
@@ -211,7 +211,7 @@ export default function ContactPage() {
                             ? { scale: 1.03 }
                             : { scale: 1 }
                         }
-                        className="absolute inset-0 bg-purple-100 rounded-md -z-10"
+                        className="absolute inset-0 bg-amber-100 rounded-md -z-10"
                         style={{
                           opacity: focusedField === "lastName" ? 0.5 : 0,
                         }}
@@ -244,7 +244,7 @@ export default function ContactPage() {
                           ? { scale: 1.03 }
                           : { scale: 1 }
                       }
-                      className="absolute inset-0 bg-purple-100 rounded-md -z-10"
+                      className="absolute inset-0 bg-amber-100 rounded-md -z-10"
                       style={{ opacity: focusedField === "email" ? 0.5 : 0 }}
                     />
                     <input
@@ -275,7 +275,7 @@ export default function ContactPage() {
                           ? { scale: 1.03 }
                           : { scale: 1 }
                       }
-                      className="absolute inset-0 bg-purple-100 rounded-md -z-10"
+                      className="absolute inset-0 bg-amber-100 rounded-md -z-10"
                       style={{ opacity: focusedField === "message" ? 0.5 : 0 }}
                     />
                     <textarea
@@ -299,7 +299,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={formStatus === "submitting"}
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-amber-600 to-yellow-500 hover:from-amber-700 hover:to-yellow-600 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all duration-300"
                   >
                     {formStatus === "submitting" ? (
                       <div className="flex items-center justify-center">

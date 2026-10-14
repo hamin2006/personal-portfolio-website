@@ -13,6 +13,46 @@ import Navbar from "../Components/Navbar";
 // Sample project data - replace with your actual projects
 const projectsData = [
   {
+    id: 12,
+    title: "SEGRA",
+    badge: "Publication · EMNLP & COLM Workshop",
+    description:
+      "SEGRA (Structured Experience Guided Reasoning Agent) is a research paper I co-authored at Amazon on answering enterprise questions over property graphs. The agent turns natural-language questions into Gremlin graph queries by combining intent routing, schema- and taxonomy-grounded query generation, multi-shot decomposition, execution-aware verification, and a curriculum-bootstrapped skill library that reuses verified query patterns. On an enterprise IT support benchmark it scores 7.0x higher than chain-of-thought prompting, and its skill library cuts LLM calls by 20% and cost by 18% without hurting answer quality.",
+    tags: [
+      "AI Agents",
+      "Knowledge Graphs",
+      "Gremlin",
+      "LLM-as-Judge",
+      "Skill Libraries",
+      "Text-to-Query",
+    ],
+    image: "/segra.jpg",
+    live: "https://arxiv.org/abs/2607.22713",
+    liveLabel: "Read Paper",
+    color: "#F2C14D",
+  },
+  {
+    id: 13,
+    title: "FlowGuard",
+    badge: "Winner · Rogers × Databricks Hackathon",
+    description:
+      "FlowGuard is an operations console for TransLink staff that uses anonymized Rogers cell-tower data to forecast when crowds will leave Park Royal, UBC and Waterfront Station, up to two hours ahead, and whether scheduled transit is ready for them. The exit forecast reaches R² 0.93–0.99 on unseen months, against 0.64 for a typical-week average. It runs end-to-end on Databricks: a Unity Catalog bronze → silver → gold pipeline on serverless Jobs, MLflow-tracked models, a Databricks App with a live route map, and Ask FlowGuard, a Genie agent operators can question in plain English.",
+    tags: [
+      "Databricks",
+      "MLflow",
+      "Unity Catalog",
+      "Genie",
+      "Forecasting",
+      "FastAPI",
+      "Leaflet",
+      "TransLink GTFS",
+    ],
+    image: "/flowguard.jpg",
+    github:
+      "https://github.com/abhiverma13/data-intelligence-for-smarter-communities",
+    color: "#3B82F6",
+  },
+  {
     id: 1,
     title: "OER-AI",
     description:
@@ -443,7 +483,7 @@ function ProjectCard({ project, isActive }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                Featured Project
+                {project.badge || "Featured Project"}
               </motion.div>
 
               <motion.h2
@@ -487,33 +527,37 @@ function ProjectCard({ project, isActive }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
             >
-              <motion.a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Github className="w-4 h-4" />
-                <span>Code</span>
-              </motion.a>
+              {project.github && (
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Code</span>
+                </motion.a>
+              )}
 
-              <motion.a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg"
-                style={{ backgroundColor: `${project.color}30` }}
-                whileHover={{
-                  scale: 1.05,
-                  backgroundColor: `${project.color}50`,
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <ExternalLink className="w-4 h-4" />
-                <span>Live Demo</span>
-              </motion.a>
+              {project.live && (
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg"
+                  style={{ backgroundColor: `${project.color}30` }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: `${project.color}50`,
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>{project.liveLabel || "Live Demo"}</span>
+                </motion.a>
+              )}
             </motion.div>
           </div>
         </div>

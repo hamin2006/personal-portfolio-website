@@ -50,7 +50,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled || menuOpen ? "scrolled" : ""}`}>
       <div className="logo">
         <img
           src="/logo-plain.png"
@@ -87,7 +87,11 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+      <button
+        className="md:hidden"
+        aria-label={menuOpen ? "Close menu" : "Open menu"}
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
         {menuOpen ? <X /> : <Menu />}
       </button>
     </nav>
