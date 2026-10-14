@@ -75,6 +75,45 @@ const projectsData = [
     color: "#0D9488",
   },
   {
+    id: 14,
+    title: "Brain Notebook",
+    badge: "Agentic RAG",
+    description:
+      "Brain Notebook is a self-hosted research notebook I rebuilt from Open Notebook around agentic retrieval. Instead of pasting documents into one prompt, every question is researched: the agent lists, greps and searches your PDFs, reads the pages it needs, looks at slides when the answer is in a diagram, and answers with page-level citations. I added a vision ingestion pipeline that captions diagrams and transcribes math, 2D and 3D concept graphs across lectures, exam cheat-sheet generation, web search and an MCP server. On a 35-question eval it answers 35/35 (vs 27/35 for the original chat), cites the right page 30/30 times (vs 1/30), and costs 72% less per run.",
+    tags: [
+      "Agentic RAG",
+      "LangGraph",
+      "Vision Models",
+      "Evals",
+      "MCP",
+      "FastAPI",
+      "Next.js",
+      "SurrealDB",
+    ],
+    image: "/brain.webp",
+    github: "https://github.com/hamin2006/brain-notebook",
+    color: "#8B5CF6",
+  },
+  {
+    id: 15,
+    title: "TradingAgents Autopilot",
+    badge: "Multi-Agent LLM System",
+    description:
+      "I extended TradingAgents, a 100k+ star multi-agent LLM trading framework built on LangGraph, into a fully automated daily paper-trading system. Every trading morning a deterministic S&P 500 momentum screener with a SPY/VIX regime gate picks candidates, parallel agent teams (four analysts, a bull/bear debate, a trader, a three-way risk debate and a portfolio manager) rate each ticker, and orders execute at the open on an Alpaca paper account with broker-side stop-losses and OCO take-profits. SEC EDGAR fundamentals, a fail-closed execution gate, per-agent structured logging and a decision memory log that scores every call against realized returns keep it honest, running headless on a self-waking Linux box.",
+    tags: [
+      "LangGraph",
+      "Multi-Agent LLMs",
+      "Alpaca API",
+      "SEC EDGAR",
+      "Python",
+      "Backtesting",
+      "Cron",
+    ],
+    image: "/tradingagents.png",
+    github: "https://github.com/hamin2006/TradingAgents",
+    color: "#22C55E",
+  },
+  {
     id: 2,
     title: "Research Data Insights",
     description:
@@ -93,6 +132,27 @@ const projectsData = [
     github: "https://github.com/UBC-CIC/Research-Data-Insights/",
     live: "https://cic.ubc.ca/project/research-data-insights-generator/",
     color: "#A78BFA",
+  },
+  {
+    id: 4,
+    title: "Forum AI",
+    description:
+      "ForumAI is an online platform which enables AI assistance in structured academic forums, facillitating discussions between students and faculty. We've leveraged a Retrieval Augmented Generation (RAG) model to provide users with relevant answers to their questions based off their course content and discussions.",
+    tags: [
+      "React.js",
+      "TailwindCSS",
+      "FastAPI",
+      "AWS",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "RAG",
+      "LangChain",
+    ],
+    image: "/forumai.png",
+    github: "https://github.com/ubclaunchpad/forum",
+    live: "https://forumai.me",
+    color: "#4ECDC4",
   },
   {
     id: 3,
@@ -117,25 +177,14 @@ const projectsData = [
     color: "#00D9FF",
   },
   {
-    id: 4,
-    title: "Forum AI",
+    id: 6,
+    title: "RepWise",
     description:
-      "ForumAI is an online platform which enables AI assistance in structured academic forums, facillitating discussions between students and faculty. We've leveraged a Retrieval Augmented Generation (RAG) model to provide users with relevant answers to their questions based off their course content and discussions.",
-    tags: [
-      "React.js",
-      "TailwindCSS",
-      "FastAPI",
-      "AWS",
-      "TypeScript",
-      "PostgreSQL",
-      "Docker",
-      "RAG",
-      "LangChain",
-    ],
-    image: "/forumai.png",
-    github: "https://github.com/ubclaunchpad/forum",
-    live: "https://forumai.me",
-    color: "#4ECDC4",
+      "A part of nwHacks2025, RepWise was a finalist in the Health and Wellness stream. The application creates a workout plan based on the user's preference level and keeps track of their progress and reps throughout their workout. Tasked with the backend and integration of computer vision, we used OpenCV and mediapipe to track the users movements and simple linear algebra to count reps. At the end of a set, based off templated guidelines defining what constituted good and bad form using landmark vectors, the application would prompt Llama to give feedback on the user's form based off the locations of their joints throughout the reps.",
+    tags: ["React.js", "Flask", "Groq", "PostgreSQL", "OpenCV", "Mediapipe"],
+    image: "/repwise.png",
+    github: "https://github.com/hamin2006/nwHacks2025-gymAI",
+    color: "#DFB63F",
   },
   {
     id: 5,
@@ -154,16 +203,6 @@ const projectsData = [
     image: "/vibesync.png",
     github: "https://github.com/hamin2006/emotion-playlist-generator",
     color: "#39A0ED",
-  },
-  {
-    id: 6,
-    title: "RepWise",
-    description:
-      "A part of nwHacks2025, RepWise was a finalist in the Health and Wellness stream. The application creates a workout plan based on the user's preference level and keeps track of their progress and reps throughout their workout. Tasked with the backend and integration of computer vision, we used OpenCV and mediapipe to track the users movements and simple linear algebra to count reps. At the end of a set, based off templated guidelines defining what constituted good and bad form using landmark vectors, the application would prompt Llama to give feedback on the user's form based off the locations of their joints throughout the reps.",
-    tags: ["React.js", "Flask", "Groq", "PostgreSQL", "OpenCV", "Mediapipe"],
-    image: "/repwise.png",
-    github: "https://github.com/hamin2006/nwHacks2025-gymAI",
-    color: "#DFB63F",
   },
   {
     id: 7,
@@ -193,17 +232,6 @@ const projectsData = [
     color: "#FF0000",
   },
   {
-    id: 9,
-    title: "Simon Says",
-    description:
-      "As an intro to web development and web scripting, I created a Simon Says game using HTML, CSS, and JavaScript. The game is a simple memory game where the user must remember the sequence of colours that Simon shows them. The game uses JavaScript to generate random sequences and check the user's input against the correct sequence and makes a horrendous beep when the user gets the sequence wrong.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    image: "/simonsays.png",
-    github: "https://github.com/hamin2006/Simon-Says",
-    live: "https://hamin2006.github.io/Simon-Says/",
-    color: "#AAFF00",
-  },
-  {
     id: 10,
     title: "Quiz Maker",
     description:
@@ -220,6 +248,17 @@ const projectsData = [
     image: "/quizmaker.png",
     github: "https://github.com/hamin2006/Quiz-Maker---Robust",
     color: "#F86624",
+  },
+  {
+    id: 9,
+    title: "Simon Says",
+    description:
+      "As an intro to web development and web scripting, I created a Simon Says game using HTML, CSS, and JavaScript. The game is a simple memory game where the user must remember the sequence of colours that Simon shows them. The game uses JavaScript to generate random sequences and check the user's input against the correct sequence and makes a horrendous beep when the user gets the sequence wrong.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image: "/simonsays.png",
+    github: "https://github.com/hamin2006/Simon-Says",
+    live: "https://hamin2006.github.io/Simon-Says/",
+    color: "#AAFF00",
   },
   {
     id: 11,
